@@ -1,0 +1,125 @@
+<section class="content-header">
+    <h1>
+        Emailhandtekeningen
+        <small>Beheren en aanmaken</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Emailhandtekeningen</li>
+    </ol>
+</section>
+
+<br>
+
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    
+
+    <div class="alert alert-info">
+
+        <strong><p>Indien u een andere functie wilt dan uitzendconsulent(e) of officemanager alsook voor wijzigingen of annulatie van een aanvraag gelieve contact op te nemen met de <a href="mailto:marketing@konvert">marketing</a></p></strong>
+
+        <div class="small-space"></div><br>
+
+        <strong><p>Wanneer u een emailhandtekening aanmaakt wordt deze eerst goedgekeurd door de marketing.</p></strong>
+        <div class="small-space"></div>
+        <strong><p>U krijgt daarna een bevestigingsmail en kan dan via deze pagina de emailhandtekening downloaden.</p></strong>
+
+    </div>
+    
+</div>
+
+
+
+<div class="col-md-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Overzicht</h3>
+
+        </div><!-- /.box-header -->
+        <div class="box-body">
+
+
+            <div class="table-responsive">
+                <table class="table no-margin">
+                    <thead>
+                        <tr>
+                            <th>Goedgekeurd</th>
+                            <th>Naam</th>
+                            <th>Functie</th>
+                            <th>Download</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr class="datarow" ng-repeat="sign in signatures">
+                            <td ng-if="sign.approved"><i class="fa fa-check"></i></td>
+                            <td ng-if="!sign.approved"><i class="fa fa-circle-o"></i></td>
+                            <td><% sign.name %></td>
+                            <td><% sign.funct.name %></td>
+                            <td><a ng-if="sign.approved" ng-click="download(sign.image)"><i class="fa fa-download"></i> Download</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div><!-- /.box-body -->
+
+    </div><!-- /.box -->
+</div>
+
+<div class="col-md-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Nieuwe emailhandtekening aanmaken</h3>
+
+        </div><!-- /.box-header -->
+        <div class="box-body">
+
+            <div id="handtekeningform">
+                <div class="ui form">
+                    <div class="three fields">
+                        <div class="twelve wide field">
+                            <label>Voornaam</label>
+                            <input type="text" onfocus="this.value = ''" ng-model="voornaam" placeholder="Voornaam">
+                            <br>
+                            <label>Naam</label>
+                            <input type="text" onfocus="this.value = ''" ng-model="naam" placeholder="Naam">
+                        </div>
+
+                        <div class="field">
+                            <label>Functie</label>
+                            <select class="ui dropdown functiedropdown">
+                                <option value="">Functie</option>
+                                <option value="1">Uitzendconsulent</option>
+                                <option value="3">Uitzendconsulente</option>
+                                <option value="2">Office manager</option>
+                            </select>
+                            <label class="officemanagergsm">gsm nummer</label>
+                            <input class="officemanagergsm" type="text" ng-model="gsmnummer" value="+32 (0)4">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="signature">
+                    <canvas id="canvas" width="500" height="147"></canvas>
+                </div>
+
+
+
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+                <a ng-click="addSignature()" class="btn btn-sm btn-info btn-flat pull-left previewbtn">preview</a>
+                <a ng-click="confirmSignature()" class="btn btn-sm btn-success btn-flat pull-right confirmbtn">Emailhandtekening aanmaken</a>
+                <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+            </div><!-- /.box-footer -->
+        </div><!-- /.box -->
+    </div>
+
+</div>
+

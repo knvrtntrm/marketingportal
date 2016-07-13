@@ -1,0 +1,83 @@
+<div class="col-md-4">
+    <div class="box">
+<div class="box-header">
+<a href="/orders/list" target="_blank" class="btn btn-warning pull-right">Lijst budgetten</a>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Zoek ..." ng-model="search">
+    </div>
+             </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            
+            <table class="table table-responsive">
+                <tbody><tr>
+                        <th>Gebruiker</th>
+                        <th>Actions</th>
+                    </tr>
+                    <tr ng-repeat="user in allusers | filter:search">
+                        <td><% user.name %></td>
+                        <td><button class="btn btn-info" ng-click="editUser(user)">details</button>
+                        <!--<button class="btn btn-info" ng-click="editUser(user)">Promoaanvragen</button>
+                        <button class="btn btn-info" ng-click="editUser(user)">Beursaanvragen</button>--></td>
+                    </tr>
+
+                </tbody></table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+</div>
+<div class="col-md-6">
+    <!-- general form elements -->
+    <div class="box box-primary edituserbox">
+        <div class="box-header with-border">
+            <h3 class="box-title">Gebruikers detail: <% userdetails.name %></h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="name">Naam</label>
+                    <input type="text" class="form-control" ng-model="userdetails.name">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input type="email" class="form-control" ng-model="userdetails.email">
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget</label>
+                    <input type="number" class="form-control" placeholder="Budget" ng-model="userdetails.budget">
+                </div>
+                <div class="form-group">
+                    <label for="adres">Adres</label>
+                    <input type="text" class="form-control" placeholder="Adres" ng-model="userdetails.address">
+                </div>
+                <div class="form-group">
+                    <label for="postcode">Postcode</label>
+                    <input type="text" class="form-control" placeholder="Postcode" ng-model="userdetails.postalcode">
+                </div>
+                <div class="form-group">
+                    <label for="city">Gemeente/stad</label>
+                    <input type="text" class="form-control" placeholder="Gemeente/stad" ng-model="userdetails.city">
+                </div>
+                <div class="form-group">
+                    <label for="telefoon">Telefoon</label>
+                    <input type="text" class="form-control" placeholder="Telefoonnummer" ng-model="userdetails.phone">
+                </div>
+                <div class="form-group">
+                    <label for="fax">Fax</label>
+                    <input type="text" class="form-control" placeholder="Fax" ng-model="userdetails.fax">
+                </div>
+
+
+            </div>
+            <!-- /.box-body -->
+
+            <div class="box-footer">
+                <button type="submit" class="btn btn-info" ng-click="updateUserData(userdetails)">Opslaan</button>
+            </div>
+        </form>
+    </div>
+    <!-- /.box -->
+
+</div>

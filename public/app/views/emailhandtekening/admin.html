@@ -1,0 +1,49 @@
+<section class="content-header">
+    <h1>
+        Emailhandtekeningen beheren
+        <small></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+        <li class="active">Emailhandtekeningen</li>
+    </ol>
+</section>
+
+<br>
+
+<div class="col-md-12">
+    <div class="box box-info">
+        <div class="box-header with-border">
+            <h3 class="box-title">Emailhandtekeningen</h3>
+
+        </div><!-- /.box-header -->
+        <div class="box-body">
+
+
+            <div class="table-responsive">
+                <table class="table no-margin">
+                    <thead>
+                    <tr>
+                        <th>emailhandtekening</th>
+                        <th>Naam - Functie</th>
+                        <th>Acties</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="datarow" ng-repeat="sign in signatures">
+                        <td><img src="images/signatures/<% sign.image %>.jpg" alt=""></td>
+                        <td><% sign.name %> - <% sign.funct.name %></td>
+                        <td><button class="btn btn-success" ng-click="approveSignature(sign.id)"><i class="fa fa-check" style="color:white;"></i></button> <button class="btn btn-danger" ng-click="declineSignature(sign.id)"><i class="fa fa-remove"></i></button></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div><!-- /.box-body -->
+
+    </div><!-- /.box -->
+</div>

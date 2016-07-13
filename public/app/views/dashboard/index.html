@@ -1,0 +1,121 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="info-box bg-yellow">
+      <span class="info-box-icon"><i class="ion ion-social-euro"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">BUDGET</span>
+        <span class="info-box-number">€<% userdata.budget %></span>
+        <div class="progress">
+          <div class="progress-bar budget-progress-bar"></div>
+        </div>
+                      <span class="progress-description">
+                        Kantoorbudget 2016
+                      </span>
+      </div><!-- /.info-box-content -->
+    </div><!-- /.info-box -->
+  </div>
+  <div class="col-md-4">
+    <div class="info-box">
+      <span class="info-box-icon bg-green"><i class="ion ion-speakerphone"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Promo bestellingen</span>
+        <span class="info-box-number"><% promorequests.length %></span>
+      </div><!-- /.info-box-content -->
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="info-box">
+      <span class="info-box-icon bg-red"><i class="ion ion-easel"></i></span>
+      <div class="info-box-content">
+        <span class="info-box-text">Beurs bestellingen</span>
+        <span class="info-box-number"><% requests.length %></span>
+      </div><!-- /.info-box-content -->
+    </div>
+  </div>
+</div>
+
+<!-- TABLE: LATEST ORDERS -->
+<div class="row">
+  <div class="col-md-6">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title">Laatste bestellingen promomateriaal</h3>
+
+      </div><!-- /.box-header -->
+      <div class="box-body">
+        <h3 ng-if="promorequests.length == 0">U heeft nog geen bestellingen voor promomateriaal</h3>
+        <div class="table-responsive">
+          <table ng-if="promorequests.length !== 0" class="table no-margin">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Aantal items</th>
+              <th>Aangevraagd op</th>
+              <th>Prijs</th>
+              <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in promorequests" ng-click="showOrderDetail(item)">
+              <td><a ng-click="showOrderDetail(item)">KVRT<% item.id %></a></td>
+              <td><% item.promoitems.length %> item(s)</td>
+              <td><% item.created_at.slice(0,10) %></td>
+
+              <td>€<% item.price %></td>
+              <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+              <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div><!-- /.table-responsive -->
+      </div><!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <a href="#/promo/aanvraag" class="btn btn-sm btn-info btn-flat pull-left">Plaats nieuwe bestelling</a>
+        <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+      </div><!-- /.box-footer -->
+    </div><!-- /.box -->
+  </div>
+
+  <div class="col-md-6">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title">Laatste bestellingen beursmateriaal</h3>
+
+      </div><!-- /.box-header -->
+      <div class="box-body">
+        <h3 ng-if="requests.length == 0">U heeft nog geen bestellingen voor beursmateriaal</h3>
+        <div class="table-responsive">
+          <table ng-if="requests.length !== 0" class="table no-margin">
+
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Aantal items</th>
+              <th>Aangevraagd op</th>
+              <th>Beurs/evenement</th>
+              <th>Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in requests" ng-click="showBeursOrderDetail(item)">
+
+              <td><a ng-click="showBeursOrderDetail(item)">KVRT<% item.id %></a></td>
+              <td><% item.inventoryitems.length %> item(s)</td>
+              <td><% item.created_at.slice(0,10) %></td>
+              <td><% item.locatie %></td>
+              <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+              <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+            </tr>
+            </tbody>
+
+          </table>
+        </div><!-- /.table-responsive -->
+      </div><!-- /.box-body -->
+      <div class="box-footer clearfix">
+        <a href="#/beurs/aanvraag" class="btn btn-sm btn-info btn-flat pull-left">Plaats nieuwe bestelling</a>
+        <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
+      </div><!-- /.box-footer -->
+    </div><!-- /.box -->
+  </div>
+
+</div>

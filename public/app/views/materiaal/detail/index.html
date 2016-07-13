@@ -1,0 +1,107 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Bestelling
+        <small>KVRT<% order.id %></small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> dashboard</a></li>
+        <li><a href="#aanvragen">aanvragen</a></li>
+        <li class="active">bestelling KVRT<% order.id %></li>
+    </ol>
+</section>
+
+<!--<div class="pad margin no-print">
+    <div class="callout callout-info" style="margin-bottom: 0!important;">
+        <h4><i class="fa fa-info"></i> Note:</h4>
+        This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+    </div>
+</div>-->
+
+<!-- Main content -->
+<section class="invoice">
+
+    <!-- info row -->
+    <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+            <strong>Van</strong>
+            <address>
+                <strong>Konvert Marketing</strong><br>
+                President Kennedypark 16<br>
+                8500 Kortrijk<br>
+                Tel: 056 240 150<br>
+                Email: marketing@konvert.be
+            </address>
+        </div><!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+            <strong>Voor</strong>
+            <address>
+                <strong><% order.client.name %></strong><br>
+                <% order.client.address %><br>
+                <% order.client.postalcode %> <% order.client.city %><br>
+                Tel: <% order.client.phone %><br>
+                Email: <% order.client.email %>
+            </address>
+        </div><!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+            <strong>Extra info</strong>
+            <address>
+                
+                Locatie: <% order.locatie %><br>
+                Datum: <% order.datum %>
+            </address>
+        </div><!-- /.col -->
+
+    </div><!-- /.row -->
+
+    <!-- Table row -->
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Hoev.</th>
+                    <th>Product</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="item in order.inventoryitems">
+                    <td><% item.pivot.amount %></td>
+                    <td><% item.name %></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
+    <div class="row">
+        <div class="col-xs-6">
+            <p class="lead">Status levering:</p>
+
+            <p class="text-muted" style="margin-top: 10px;" ng-if="order.status == 3">
+                <i class="fa fa-check"></i> De bestelling werd verzonden op <strong><% order.updated_at.slice(0,10) %></strong>
+            </p>
+            <p class="text-muted" style="margin-top: 10px;" ng-if="order.status == 1">
+                <i class="fa fa-circle-o"></i> De bestelling is in behandeling
+            </p>
+        </div><!-- /.col -->
+        <div class="col-xs-6">
+
+
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+
+    <!-- this row will not appear when printing -->
+    <div class="row no-print">
+        <!--<div class="col-xs-12">
+            <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+            <button class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment</button>
+            <button class="btn btn-primary pull-right" style="margin-right: 5px;"><i class="fa fa-download"></i> Generate PDF</button>
+        </div>-->
+    </div>
+</section><!-- /.content -->
+<div class="clearfix"></div>
+</div><!-- /.content-wrapper -->
+
+

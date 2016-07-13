@@ -1,0 +1,560 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Drukwerk
+        <small>aanvragen</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> dashboard</a></li>
+        <li class="active">drukwerk</li>
+    </ol>
+</section>
+
+<br>
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Mijn drukwerk</h3>
+                </div>
+                <div class="box-body">
+
+                    <div class="table-responsive">
+                        <table class="table no-margin">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Type</th>
+                                <th>Hoeveelheid</th>
+                                <th>Datum aanvraag</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in drukwerk" >
+                                <td>DRK<% item.id %></td>
+                                <td><% item.type %></td>
+                                <td><% item.amount %></td>
+                                <td><% item.created_at.slice(0,10) %></td>
+                                <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+                                <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Info aanvragen drukwerk bij marketing</h3>
+                    </div>
+
+                    <div class="box-body">
+
+                        <p>Gelieve minstens <strong>3 weken</strong> op voorhand gewone aanvragen door te sturen!
+                            Voor grotere projecten/acties (vb. Postbusbedeling) moet je minstens <strong>5 weken</strong> rekenen.</p>
+
+                        <div class="small-space"></div>
+
+                        <p>Gelieve indien nodig beelden van de klanten toe te voegen bij de indiening van jullie aanvraag, pas bij aanlevering van de correcte beelden <strong>(in hoge resolutie)</strong> kan een voorstel opgemaakt worden.</p>
+                        <div class="small-space"></div>
+                        <p>Voor wijzigingen of annulatie van een aanvraag gelieve contact op te nemen met de
+                            <a href="mailto:marketing@konvert.be">marketing</a></p>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Online aanvraag invullen</h3>
+                    </div>
+
+                    <div class="box-body">
+
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#openAanvraagKaartjes" style="width:100%;">Kaartjes</button>
+                        <div class="small-space"></div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#openAanvraagFlyer" style="width:100%;">Flyer</button>
+                        <div class="small-space"></div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#openAanvraagAffiche" style="width:100%;">Affiche</button>
+                        <div class="small-space"></div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#openAanvraagAdvertentie" style="width:100%;">Advertentie</button>
+                        <div class="small-space"></div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#openAanvraagUitnodiging" style="width:100%;">Uitnodiging</button>
+                        <div class="small-space"></div>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#openAanvraagAndere" style="width:100%;">Andere</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Problemen met bestanden uploaden?</h3>
+                    </div>
+
+                    <div class="box-body">
+                        <div class="small-space"></div>
+
+                        <p>Als u problemen hebt met het bijvoegen van bestanden in het formulier gelieve dan uw bijlagen door te sturen naar <a href="mailto:marketing@konvert.be">graficus@konvert.be</a> met vermelding van de ID code van de aanvraag (kolom links).</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<div class="modal modal-default fade" id="openAanvraagKaartjes">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Kaartjes aanvragen</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="box-body">
+                    <form role="form" action="/drukwerk/save" files="true" method="POST" data-parsley-validate enctype="multipart/form-data">
+                        <!-- text input -->
+
+                        <input type="hidden" name="type" value="Kaartjes"/>
+
+                        <div class="form-group">
+                            <label>Aantal</label>
+                            <input name="aantal" type="number" class="form-control" placeholder="" data-parsley-required="true" required/>
+                            <label>Keuze formaat</label>
+                            <input name="formaat" type="text" class="form-control" placeholder="vb. Bankkaartformaat of 5cm lang op 5cm hoog" data-parsley-required="true" required/>
+                            <label>Specificaties</label>
+                            <input name="kaartspecs" type="text" class="form-control" placeholder="Specificaties" data-parsley-required="true" required/>
+                        </div>
+
+                        <!-- Date dd/mm/yyyy -->
+                        <div class="form-group">
+                            <label>Uiterste ontvangstdatum</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="end_date" class="form-control datepicker" data-inputmask="'mask': '99/99/2099'" data-mask data-parsley-required="true" required/>
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <div class="form-group">
+                            <label>Extra info (tekst, opmerking)</label>
+                            <textarea name="extra" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Doel van drukwerk</label>
+                            <textarea name="doel" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <span>Bestanden uploaden</span>
+                            <input type="file" id="inputFiles" name="inputFiles[]" multiple>
+                            <p class="help-block">Kies bestanden om te uploaden</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Aanvraag indienen</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.modal-content -->
+
+<div class="modal modal-default fade" id="openAanvraagFlyer">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Flyer aanvragen</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="box-body">
+                    <form role="form" action="/drukwerk/save" method="POST" data-parsley-validate enctype="multipart/form-data">
+                        <!-- text input -->
+
+                        <input type="hidden" name="type" value="Flyer"/>
+
+                        <div class="form-group">
+                            <label>Aantal</label>
+                            <input name="aantal" type="number" class="form-control" placeholder="Aantal flyers" data-parsley-required="true" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Hoe gedrukt (A5)</label>
+                            <select class="form-control select2" name="druktype">
+                                <option value="1">Recto</option>
+                                <option value="0">Recto/Verso</option>
+                            </select>
+                        </div>
+
+                        <!-- Date dd/mm/yyyy -->
+                        <div class="form-group">
+                            <label>Uiterste ontvangstdatum</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="end_date" class="form-control datepicker" data-inputmask="'mask': '99/99/2099'" data-mask data-parsley-required="true" required/>
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <div class="form-group">
+                            <label>Extra info (tekst, opmerking)</label>
+                            <textarea name="extra" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Doel van drukwerk</label>
+                            <textarea name="doel" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <span>Bestanden uploaden</span>
+                            <input type="file" id="inputFiles" name="inputFiles[]" multiple="">
+                            <p class="help-block">Kies bestanden om te uploaden</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Aanvraag indienen</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.modal-content -->
+
+<div class="modal modal-default fade" id="openAanvraagAffiche">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Affiche aanvragen</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="box-body">
+                    <form role="form" action="/drukwerk/save" method="POST" data-parsley-validate enctype="multipart/form-data">
+                        <!-- text input -->
+
+                        <input type="hidden" name="type" value="Affiche"/>
+
+                        <div class="form-group">
+                            <label>Aantal</label>
+                            <input name="aantal" type="number" class="form-control" placeholder="Aantal affiches" data-parsley-required="true" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Formaat</label>
+                            <select class="form-control select2" name="formaat" required>
+                                <option value="A4">A4</option>
+                                <option value="A3">A3 (2 X A4)</option>
+                                <option value="A2">A2 (2 X A3)</option>
+                                <option value="A1">A1 (2 X A2)</option>
+                                <option value="A0">A0 (2 X A1)</option>
+                            </select>
+                        </div>
+
+                        <!-- Date dd/mm/yyyy -->
+                        <div class="form-group">
+                            <label>Uiterste ontvangstdatum</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="end_date" class="form-control datepicker" data-inputmask="'mask': '99/99/2099'" data-mask data-parsley-required="true" required/>
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <div class="form-group">
+                            <label>Extra info (tekst, opmerking)</label>
+                            <textarea name="extra" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Doel van drukwerk</label>
+                            <textarea name="doel" class="form-control" rows="3" required></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span>Bestanden uploaden</span>
+                            <input type="file" id="inputFiles" name="inputFiles[]" multiple="">
+                            <p class="help-block">Kies bestanden om te uploaden</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Aanvraag indienen</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.modal-content -->
+
+<div class="modal modal-default fade" id="openAanvraagAdvertentie">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Advertentie aanvragen</h4>
+            </div>
+            <div class="modal-body">
+
+                <input type="hidden" name="type" value="Advertentie"/>
+
+                <div class="box-body">
+                    <form role="form" action="/drukwerk/save" method="POST" data-parsley-validate enctype="multipart/form-data">
+                        <!-- text input -->
+
+                        <div class="form-group">
+                            <label>Aantal</label>
+                            <input name="aantal" type="number" class="form-control" placeholder="Aantal advertenties" data-parsley-required="true" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Formaat</label>
+                            <input name="formaat" type="text" class="form-control" placeholder="Formaat" data-parsley-required="true" required/>
+                            <p>(breedte - lengte) soms afhankelijk van budget – indien niet gekend gelieve aan te vragen bij de organisatie!
+                                vb. 1/4de van een A4 pagina of 1/2de van een A5 pagina of 5cm hoog op 6cm lang</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kleur</label>
+                            <select class="form-control select2" name="formaat">
+                                <option value="1">Kleur</option>
+                                <option value="0">Zwart/wit</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Hoe gedrukt</label>
+                            <select class="form-control select2" name="druktype">
+                                <option value="1">Recto</option>
+                                <option value="0">Recto/Verso</option>
+                            </select>
+                        </div>
+
+                        <!-- Date dd/mm/yyyy -->
+                        <div class="form-group">
+                            <label>Uiterste ontvangstdatum</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="end_date" class="form-control datepicker" data-inputmask="'mask': '99/99/2099'" data-mask data-parsley-required="true" required/>
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <div class="form-group">
+                            <label>Extra info (tekst, opmerking)</label>
+                            <textarea name="extra" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Doel van drukwerk</label>
+                            <textarea name="doel" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <span>Bestanden uploaden</span>
+                            <input type="file" id="inputFiles" name="inputFiles[]" multiple="">
+                            <p class="help-block">Kies bestanden om te uploaden</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Aanvraag indienen</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.modal-content -->
+
+<div class="modal modal-default fade" id="openAanvraagUitnodiging">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Uitnodiging aanvragen</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="box-body">
+                    <form role="form" action="/drukwerk/save" method="POST" data-parsley-validate enctype="multipart/form-data">
+                        <!-- text input -->
+
+                        <input type="hidden" name="type" value="Uitnodiging"/>
+
+                        <div class="form-group">
+                            <label>Aantal</label>
+                            <input name="aantal" type="number" class="form-control" placeholder="Aantal uitnodigingen" data-parsley-required="true" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Formaat</label>
+                            <input name="formaat" type="text" class="form-control" placeholder="Formaat" data-parsley-required="true" required/>
+                            <p>Standaardformaat: enveloppeformaat</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Kleur</label>
+                            <select class="form-control select2" name="color">
+                                <option value="1">Kleur</option>
+                                <option value="0">Zwart/wit</option>
+                            </select>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="1" name="digitaal">
+                                Digitaal & druk
+                            </label>
+                        </div>
+
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="1" name="enkeldigitaal">
+                                Enkel digitaal
+                            </label>
+                        </div>
+
+                        <!-- Date dd/mm/yyyy -->
+                        <div class="form-group">
+                            <label>Uiterste ontvangstdatum</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="end_date" class="form-control datepicker" data-inputmask="'mask': '99/99/2099'" data-mask data-parsley-required="true" required/>
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <div class="form-group">
+                            <label>Extra info (tekst, opmerking)</label>
+                            <textarea name="extra" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Doel van drukwerk</label>
+                            <textarea name="doel" class="form-control" rows="3" required></textarea>
+                        </div>
+
+
+                        <div class="form-group">
+                            <span>Bestanden uploaden</span>
+                            <input type="file" id="inputFiles" name="inputFiles[]" multiple="">
+                            <p class="help-block">Kies bestanden om te uploaden</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Aanvraag indienen</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.modal-content -->
+
+<div class="modal modal-default fade" id="openAanvraagAndere">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Andere aanvragen</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="box-body">
+                    <form role="form" action="/drukwerk/save" method="POST" data-parsley-validate enctype="multipart/form-data">
+                        <!-- text input -->
+
+                        <input type="hidden" name="type" value="Andere"/>
+
+                        <div class="form-group">
+                            <label>Aantal</label>
+                            <input name="aantal" type="number" class="form-control" placeholder="Aantal" data-parsley-required="true" required/>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Wat wil je bestellen</label>
+                            <input name="wat" type="text" class="form-control" placeholder="..." data-parsley-required="true" required/>
+                            <p>vb. Bijbestellingen onthaalbrochures (klant)</p>
+                        </div>
+
+                        <!-- Date dd/mm/yyyy -->
+                        <div class="form-group">
+                            <label>Uiterste ontvangstdatum</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
+                                <input type="text" name="end_date" class="form-control datepicker" data-inputmask="'mask': '99/99/2099'" data-mask data-parsley-required="true" required/>
+                            </div><!-- /.input group -->
+                        </div><!-- /.form group -->
+
+                        <div class="form-group">
+                            <label>Extra info (tekst, opmerking)</label>
+                            <textarea name="extra" class="form-control" rows="5" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Doel van drukwerk</label>
+                            <textarea name="doel" class="form-control" rows="3" required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <span>Bestanden uploaden</span>
+                            <input type="file" id="inputFiles" name="inputFiles[]" multiple="">
+                            <p class="help-block">Kies bestanden om te uploaden</p>
+                        </div>
+
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-success">Aanvraag indienen</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div><!-- /.modal-content -->

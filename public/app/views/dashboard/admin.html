@@ -1,0 +1,161 @@
+<!-- TABLE: LATEST ORDERS -->
+<div class="row">
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Openstaande bestellingen promo materiaal</h3>
+
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <h3 ng-if="promorequests.length == 0">U heeft nog geen bestellingen voor promomateriaal</h3>
+                <div class="table-responsive">
+                    <table ng-if="promorequests.length !== 0" class="table no-margin">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Aangevraagd door</th>
+                            <th>Aantal items</th>
+                            <th>Aangevraagd op</th>
+                            <th>Prijs</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in promorequests" ng-if="item.status == 1" ng-click="showOrderDetail(item)">
+                            <td><a ng-click="showOrderDetail(item)">KVRT<% item.id %></a></td>
+                            <td><% item.client.name %></td>
+                            <td><% item.promoitems.length %> item(s)</td>
+                            <td><% item.created_at.slice(0,10) %></td>
+                            <td>€<% item.price %></td>
+                            <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+                            <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+
+        </div><!-- /.box -->
+    </div>
+
+
+
+    <div class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">Openstaande bestellingen beursmateriaal</h3>
+
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <h3 ng-if="requests.length == 0">U heeft nog geen bestellingen voor beursmateriaal</h3>
+                <div class="table-responsive">
+                    <table ng-if="requests.length !== 0" class="table no-margin">
+
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Aantal items</th>
+                            <th>Aangevraag door</th>
+                            <th>Aangevraagd op</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in requests" ng-if="item.status == 1" ng-click="showBeursOrderDetail(item)">
+                            <td><a ng-click="showBeursOrderDetail(item)">KVRT<% item.id %></a></td>
+                            <td><% item.inventoryitems.length %> item(s)</td>
+                            <td><% item.client.name %></td>
+                            <td><% item.created_at.slice(0,10) %></td>
+                            <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+                            <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+
+        </div><!-- /.box -->
+    </div>
+
+    <div class="col-md-6">
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Voltooide bestellingen promo materiaal</h3>
+
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <h3 ng-if="promorequests.length == 0">Er zijn nog geen bestellingen voltooid</h3>
+                <div class="table-responsive">
+                    <table ng-if="promorequests.length !== 0" class="table no-margin">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Aangevraagd door</th>
+                            <th>Aantal items</th>
+                            <th>Aangevraagd op</th>
+                            <th>Voltooid op</th>
+                            <th>Prijs</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in promorequests" ng-if="item.status == 3" ng-click="showOrderDetail(item)">
+                            <td><a ng-click="showOrderDetail(item)">KVRT<% item.id %></a></td>
+                            <td><% item.client.name %></td>
+                            <td><% item.promoitems.length %> item(s)</td>
+                            <td><% item.created_at.slice(0,10) %></td>
+                            <td><% item.updated_at.slice(0,10) %></td>
+                            <td>€<% item.price %></td>
+                            <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+                            <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+
+        </div><!-- /.box -->
+    </div>
+
+    <div class="col-md-6">
+        <div class="box box-danger">
+            <div class="box-header with-border">
+                <h3 class="box-title">Voltooide bestellingen beursmateriaal</h3>
+
+            </div><!-- /.box-header -->
+            <div class="box-body">
+                <h3 ng-if="requests.length == 0">Er zijn nog geen bestellingen voor beursmateriaal voltooid</h3>
+                <div class="table-responsive">
+                    <table ng-if="requests.length !== 0" class="table no-margin">
+
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Aantal items</th>
+                            <th>Aangevraag door</th>
+                            <th>Aangevraagd op</th>
+                            <th>Voltooid op</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in requests" ng-if="item.status == 3" ng-click="showBeursOrderDetail(item)">
+                            <td><a ng-click="showBeursOrderDetail(item)">KVRT<% item.id %></a></td>
+                            <td><% item.inventoryitems.length %> item(s)</td>
+                            <td><% item.client.name %></td>
+                            <td><% item.created_at.slice(0,10) %></td>
+                            <td><% item.updated_at.slice(0,10) %></td>
+                            <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
+                            <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+                </div><!-- /.table-responsive -->
+            </div><!-- /.box-body -->
+
+        </div><!-- /.box -->
+    </div>
+
+</div>

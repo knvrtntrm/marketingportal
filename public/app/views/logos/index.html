@@ -1,0 +1,48 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Konvert Logo's
+        <small>Download in PDF, EPS of JPG</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> dashboard</a></li>
+        <li class="active">logo's</li>
+    </ol>
+</section>
+
+<br>
+
+<div class="col-md-6 col-lg-4" ng-repeat="logo in logos">
+    <!-- Widget: user widget style 1 -->
+    <div class="box box-widget widget-user logo-box " >
+        <!-- Add the bg color to the header using any of the bg-* classes -->
+        <div class="widget-user-header bg-white" style="background: url('images/logos/thumbnails/<%logo.image%>.png') center center;background-repeat:no-repeat;background-size: contain;">
+            <!--<h3 class="widget-user-username"><% logo.name %></h3>
+            <h5 class="widget-user-desc">Web Designer</h5>-->
+        </div>
+
+        <div class="box-footer">
+            <div class="row">
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <h5 class="description-header">.EPS</h5>
+                        <a ng-click="downloadLogo(logo.image, 'eps')"><span class="description-text">Download</span></a>
+                    </div><!-- /.description-block -->
+                </div><!-- /.col -->
+                <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                        <h5 class="description-header">.JPG</h5>
+                        <a ng-click="downloadLogo(logo.image, 'jpg')"><span class="description-text">Download</span></a>
+                    </div><!-- /.description-block -->
+                </div><!-- /.col -->
+                <div class="col-sm-4">
+                    <div class="description-block">
+                        <h5 class="description-header">.PDF</h5>
+                        <a ng-click="downloadLogo(logo.image, 'pdf')"><span class="description-text">Download</span></a>
+                    </div><!-- /.description-block -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </div>
+    </div><!-- /.widget-user -->
+</div><!-- /.col -->
+</div><!-- /.row -->

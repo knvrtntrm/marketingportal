@@ -1,0 +1,426 @@
+body {
+  background-color: #f3f3f3; }
+
+#bgimage {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1440px !important; } }
+
+@media (min-width: 1265px) {
+  #requestlistsummary {
+    margin-top: 14px;
+    margin-left: 3%; } }
+
+@media (max-width: 1024px) {
+  #requestlistsummary {
+    margin-top: 14px;
+    margin-left: 1%; } }
+
+.cardheader {
+  font-size: 1em;
+  text-align: center;
+  padding: 8px;
+  padding-top: 17px;
+  text-transform: uppercase;
+  font-family: open sans condensed;
+  color: #8E8E8E;
+  font-weight: 100; }
+
+.header span {
+  font-size: 1.5em; }
+
+.cardcontent {
+  text-align: center; }
+
+.resultstable tbody {
+  overflow-y: scroll;
+  height: 368px; }
+
+.requesttable {
+  margin-top: 20px;
+  margin-bottom: 20px; }
+
+.requestdatum {
+  padding: 5px;
+  width: 100px;
+  background-color: #2185D0;
+  color: white;
+  font-family: open sans condensed;
+  text-transform: uppercase;
+  text-align: center;
+  float: right !important;
+  border-top-left-radius: 14px;
+  border-bottom-left-radius: 14px;
+  margin-right: -15px; }
+
+.tab h3 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center; }
+
+.newcenteredbutton {
+  margin: 0 auto;
+  display: block;
+  width: 200px;
+  margin-bottom: 50px; }
+
+.itemstate {
+  width: 20px; }
+
+h1.titel {
+  color: #7E7E7E;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important; }
+
+#createRequestView h1 {
+  text-align: center;
+  padding: 20px;
+  color: #636363; }
+
+.navbar-brand img {
+  width: 125px; }
+
+.headerimage {
+  width: 100%;
+  height: 300px; }
+
+.navbar-default {
+  border: 0 !important;
+  height: 75px !important;
+  border-radius: 0 !important;
+  background-color: #86AABF; }
+
+.info-sidebar {
+  margin: 0 auto !important;
+  display: block !important;
+  width: 100% !important; }
+
+.ui.card {
+  background: none !important;
+  box-shadow: none !important; }
+
+.formpanel {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.53);
+  margin-top: 150px;
+  border-radius: 4px;
+  height: 300px;
+  border-top: 5px solid #FF7777;
+  box-shadow: 2px 2px 22px -5px rgba(0, 0, 0, 0.46); }
+
+.custom-panel {
+  padding: 15px;
+  background-color: #fff;
+  margin-top: 14px;
+  border-radius: 8px;
+  height: 100%;
+  border-bottom: 5px solid #e5e6e6;
+  margin-bottom: 50px; }
+
+.formpanel form {
+  margin-top: 30px; }
+
+.lockImg {
+  width: 60px;
+  position: absolute;
+  top: -31px;
+  left: 44%;
+  border-radius: 60px;
+  border: 5px solid #bfd2e3; }
+
+.itemselect {
+  margin: 0 auto;
+  display: block; }
+
+.ui.cards a.card, .ui.link.card, .ui.link.cards .card, a.ui.card {
+  max-width: 270px; }
+
+label {
+  font-family: Lato;
+  font-weight: 300 !important;
+  color: #808080; }
+
+.totaalprijs {
+  float: right;
+  margin-right: 60px;
+  font-size: 2em;
+  color: #5E6979; }
+
+.btn {
+  margin-bottom: 10px; }
+
+.confirmbutton {
+  margin-left: 40px !important;
+  margin-bottom: 50px !important; }
+
+.item {
+  cursor: pointer; }
+
+.item:hover {
+  background-color: #E4E4E4; }
+
+.loginbtn {
+  width: 100%;
+  background-color: #FF7777;
+  color: white;
+  margin-top: 15px; }
+
+.ui.card > .image {
+  background: none !important; }
+
+.ui.card > .content {
+  border: none; }
+
+.ui.card > .image > img {
+  width: 90px;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 20px;
+  margin-top: 20px; }
+
+.btn-link {
+  width: 100%; }
+
+input {
+  border-radius: 0 !important; }
+
+.error-field {
+  border: 2px solid #FF8888 !important; }
+
+.sidebar-menu {
+  margin-top: 20px; }
+
+.sidebar-menu ul {
+  padding-left: 0; }
+
+.sidebar-menu-item {
+  list-style: none;
+  width: 90%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding: 13px;
+  border-radius: 6px;
+  border-bottom: 4px solid #86AABF;
+  background-color: #9FBED0;
+  margin-top: 20px;
+  color: white; }
+
+.user-panel > .image > img {
+  margin-top: 9px !important; }
+
+hr {
+  border-color: #C2C7CE; }
+
+.notification-item {
+  cursor: pointer; }
+
+.notification-item:hover {
+  background-color: #E6E6E6; }
+
+.clicklink {
+  cursor: pointer;
+  color: #0c7fdc; }
+
+.clicklink:hover {
+  color: #005f81; }
+
+.fa-check {
+  color: #00A65A; }
+
+.fa-circle-o {
+  color: #E6E6E6; }
+
+table {
+  border-radius: 0 !important; }
+
+.ui.table td {
+  display: table-cell !important;
+  vertical-align: middle !important;
+  text-align: left !important; }
+
+.ui.segment {
+  border: none !important;
+  padding: 0; }
+
+.ui.attached.tabular.menu {
+  border: none;
+  margin-bottom: 40px; }
+
+.ui.tabular.menu .active.item {
+  background-color: #9FBED0;
+  border: none;
+  border-bottom: 4px solid #86AABF;
+  border-radius: 6px !important;
+  color: white; }
+
+.imagepopup img {
+  width: 300px;
+  padding: 5px;
+  border: 1px solid #EEEEEE;
+  border-radius: 4px; }
+
+.section-title {
+  margin-bottom: 30px;
+  color: #8C8B8B;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  text-align: center; }
+
+.iconimg {
+  width: 30px;
+  margin-right: 10px;
+  vertical-align: middle; }
+
+.field {
+  margin: 40px !important; }
+
+.centeredbutton {
+  border-radius: 0 !important;
+  display: block !important;
+  margin: 40px !important; }
+
+#jobItemTable {
+  width: calc(100% - 80px);
+  margin: 40px;
+  border-radius: 6px !important; }
+
+.custompanel.ui.card > .extra, .ui.cards > .card > .extra {
+  border-bottom: 4px solid #e5e6e6; }
+
+input.inventory-search {
+  margin-bottom: 20px !important; }
+
+table:hover {
+  cursor: pointer; }
+
+#jobItemTable {
+  margin-top: 50px !important;
+  margin-bottom: 50px !important; }
+
+@font-face {
+  font-family: 'eurostilebold';
+  src: url("fonts/eurostile/urw_-_eurostile-bol-webfont.eot");
+  src: url("fonts/eurostile/urw_-_eurostile-bol-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/eurostile/urw_-_eurostile-bol-webfont.woff2") format("woff2"), url("fonts/eurostile/urw_-_eurostile-bol-webfont.woff") format("woff"), url("fonts/eurostile/urw_-_eurostile-bol-webfont.ttf") format("truetype"), url("fonts/eurostile/urw_-_eurostile-bol-webfont.svg#eurostilebold") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'eurostileregular';
+  src: url("fonts/eurostile/urw_-_eurostile-reg-webfont.eot");
+  src: url("fonts/eurostile/urw_-_eurostile-reg-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/eurostile/urw_-_eurostile-reg-webfont.woff2") format("woff2"), url("fonts/eurostile/urw_-_eurostile-reg-webfont.woff") format("woff"), url("fonts/eurostile/urw_-_eurostile-reg-webfont.ttf") format("truetype"), url("fonts/eurostile/urw_-_eurostile-reg-webfont.svg#eurostileregular") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'eurostileregular_oblique';
+  src: url("fonts/eurostile/urw_-_eurostile-regobl-webfont.eot");
+  src: url("fonts/eurostile/urw_-_eurostile-regobl-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/eurostile/urw_-_eurostile-regobl-webfont.woff2") format("woff2"), url("fonts/eurostile/urw_-_eurostile-regobl-webfont.woff") format("woff"), url("fonts/eurostile/urw_-_eurostile-regobl-webfont.ttf") format("truetype"), url("fonts/eurostile/urw_-_eurostile-regobl-webfont.svg#eurostileregular_oblique") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+.addsignaturebtn {
+  margin: 0 auto;
+  text-align: center;
+  width: 250px;
+  display: block; }
+
+#emailhandtekening {
+  position: relative;
+  width: 500px;
+  height: 147px;
+  font-family: eurostileregular;
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 50px; }
+
+.allinfo {
+  z-index: 1;
+  margin-left: 20px;
+  margin-top: 5px; }
+
+.info {
+  margin-top: 5px; }
+
+.footer {
+  position: absolute;
+  top: 10px; }
+
+#emailhandtekening h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #009fe3;
+  margin-bottom: -12px;
+  font-family: eurostilebold; }
+
+#emailhandtekening h2 {
+  font-size: 10pt;
+  color: #ea5b0c;
+  font-family: eurostileregular_oblique;
+  margin-top: 10px !important;
+  margin-bottom: 9px !important; }
+
+#emailhandtekening p {
+  font-size: 8pt; }
+
+#emailhandtekening p.contact, #emailhandtekening p.mail {
+  margin-top: -10px; }
+
+#emailhandtekening span {
+  color: #009fe3; }
+
+.x2 {
+  -webkit-transform: scale(2, 2);
+  transform: scale(2, 2); }
+
+#signature {
+  font-family: eurostilebold;
+  /*  position:absolute;
+  left:100000px;*/ }
+
+.sidebar-menu-item a {
+  color: white; }
+
+.card > .image {
+  background-color: white !important; }
+
+.itemsearchfilter {
+  width: 100%;
+  margin-bottom: 50px;
+  border: 1px solid #E6E6E6;
+  font-size: 16px;
+  height: 40px;
+  padding: 10px; }
+
+.sidebartitle {
+  text-align: center;
+  margin: 20px;
+  color: #8B8E90;
+  margin-bottom: 40px; }
+
+.alert-success {
+  color: #3c763d !important;
+  background-color: #dff0d8 !important;
+  border-color: #d6e9c6 !important; }
+
+.dropdown-toggle {
+  cursor: pointer; }
+
+.navbar-nav > .notifications-menu > .dropdown-menu {
+  width: auto;
+  min-width: 270px; }
+
+a {
+  cursor: pointer; }
+
+.widget-user .box-footer {
+  padding-top: 0; }
+
+/*# sourceMappingURL=app.css.map */

@@ -1,0 +1,127 @@
+<div id="createRequestView">
+
+    <div ng-if="overbudget" class="ui negative message transition">
+        <i class="close icon"></i>
+        <div class="header">
+            Let op!
+        </div>
+        <p>U bent over het resterende budget gegaan
+        </p></div>
+
+    <h1>Promomateriaal aanvragen ( resterend budget: <span style="color:#009fe3;">€<% user.budget %></span> )</h1>
+
+
+
+    <section class="custom-panel col-md-12" id="inventoryitemlist">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <h2 class="section-title">Items in stock</h2>
+
+                <div class="ui fluid input">
+                    <input type="text" class="inventory-search" placeholder="Search...">
+                </div>
+            </div>
+
+            <div class="resultstable">
+
+                <table class="ui single line selectable striped blue table" id="inventoryItemTable">
+                    <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Besch.</th>
+                        <th>Pakket</th>
+                        <th>Stock</th>
+                        <th>Prijs</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="datarow" ng-repeat="item in promoItems" ng-mouseover="showInventoryItemImage(item)" ng-mouseout="hideInventoryItemImage()">
+                        <td><% item.name %></td>
+                        <td ng-if="item.amountinstock > 0"><img class="itemstate" src="/images/states/1.png" alt="available"></td>
+                        <td ng-if="item.amountinstock == 0"><img class="itemstate" src="/images/states/3.png" alt="available"></td>
+                        <td><% item.pack %></td>
+                        <td><% item.amountinstock %> stuk(s)</td>
+                        <td>€<% item.price %></td>
+                        <td ng-if="item.amountinstock > 0"><button class="btn btn-success" ng-click="addPromoItemToRequestList(item)"><i class="fa fa-plus"></i></button></td>
+                        <td ng-if="item.amount == 0"></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<section id="requestlist " class="custom-panel col-md-12">
+
+    <div class="panel panel-default">
+
+        <div class="panel-heading">
+            <h2 class="section-title">Info & overzicht aanvraag</h2>
+        </div>
+
+        <form class="ui form">
+
+            <div class="jobtable">
+
+                <table class="ui single line selectable striped blue table" id="jobItemTable">
+                    <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Prijs/st</th>
+                        <th>Stock</th>
+                        <th>Aantal</th>
+                        <th>Prijs</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr class="datarow" ng-repeat="item in currentRequestList">
+                        <td><% item.name %></td>
+                        <td>€<% item.price %></td>
+                        <td><% item.amountinstock - chosenAmount %></td>
+                        <td><input type="number" min="1" max="<% item.amountinstock %>" value="1" ng-model="chosenAmount" ng-change="changeAmountToOrder(item, chosenAmount)"></td>
+                        <td class="prijs">€<% item.price * chosenAmount %></td>
+                        <td><button class="btn btn-danger" ng-click="removePromoItemFromRequestList(item)"><i class="fa fa-remove"></i></button></td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="field">
+                <label>Opmerkingen:</label>
+                <textarea name="opmerkingen" id="opmerkingen" ng-model="comment"></textarea>
+            </div>
+
+            <button class="ui green button centeredbutton" ng-click="openConfirmationDimmer()">Aanvraag bevestigen</button>
+        </form>
+    </div>
+
+</section>
+
+<div class="imagepopup col-md-6"></div>
+
+<div class="ui inverted dimmer">
+    <div class="content">
+        <div class="center">
+            <h2 class="ui inverted icon header">
+                <i class="checkmark black icon"></i>
+                <h1 style="color:#4E4E4E;">Bestelling bevestigen?</h1>
+                <br>
+                <br>
+                <button class="ui inverted red button" ng-click="closeDimmer()">Annuleren</button>
+                <button class="ui inverted green button" ng-click="savePromoRequest()">Bevestigen</button>
+            </h2>
+        </div>
+    </div>
+</div>

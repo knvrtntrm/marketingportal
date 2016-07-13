@@ -1,0 +1,131 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Drukwerk
+        <small>Detail</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> dashboard</a></li>
+        <li><a href="#/admin/drukwerk">drukwerk</a></li>
+        <li class="active">drukwerk detail</li>
+    </ol>
+</section>
+
+<br>
+
+
+<div class="row">
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 ng-if="!userdata.admin" class="box-title">Aanvraag voor <% item.type %></h3>
+                    <h3 ng-if="userdata.admin" class="box-title"><% item.type %> voor <% item.client.name %></h3>
+                </div>
+                <div class="box-body">
+
+                    <div class="table-responsive">
+                        <table class="table no-margin">
+                            <thead>
+                            <tr>
+                                <th>Specificaties</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-if="userdata.admin">
+                                <td>Aangevraag door</td>
+                                <td><% item.client.name %></td>
+                            </tr>
+                            <tr>
+                                <td>Type drukwerk</td>
+                                <td><% item.type %></td>
+                            </tr>
+                            <tr>
+                                <td>Formaat</td>
+                                <td><% item.size %></td>
+                            </tr>
+                            <tr>
+                                <td>Hoeveelheid</td>
+                                <td><% item.amount %></td>
+                            </tr>
+                            <tr>
+                                <td>Kleur</td>
+                                <td ng-if="item.color"><i class="fa fa-check"></i></td>
+                                <td ng-if="!item.color"><i class="fa fa-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Recto/verso</td>
+                                <td ng-if="item.presstype"><i class="fa fa-check"></i></td>
+                                <td ng-if="!item.presstype"><i class="fa fa-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Digitaal & druk</td>
+                                <td ng-if="item.digital"><i class="fa fa-check"></i></td>
+                                <td ng-if="!item.digital"><i class="fa fa-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Enkel Digitaal</td>
+                                <td ng-if="item.onlydigital == 1"><i class="fa fa-check"></i></td>
+                                <td ng-if="!item.onlydigital"><i class="fa fa-remove"></i></td>
+                            </tr>
+                            <tr>
+                                <td>Doel van drukwerk</td>
+                                <td><% item.purpose %></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+                <div ng-if="userdata.admin" class="box-footer clearfix">
+                    <a ng-click="drukwerkFinished(item)" class="btn btn-sm btn-success btn-flat pull-left">Verzonden</a>
+                    <a ng-click="removeDrukwerk(item)" class="btn btn-sm btn-danger btn-flat pull-right">Annuleren</a>
+                </div><!-- /.box-footer -->
+            </div>
+        </div>
+
+
+
+        <div class="col-md-4 col-sm-12 col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Bijgevoegde bestanden</h3>
+                </div>
+                <div class="box-body">
+
+                    <div class="table-responsive">
+                        <table class="table no-margin">
+                            <thead>
+                            <tr>
+                                <th>Bestand</th>
+                                <th>Download</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="file in files">
+                                <td><% file.name %></td>
+                                <td><p class="clicklink" ng-click="downloadFile(file)"><i class="fa fa-download"></i> Download</p></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div><!-- /.table-responsive -->
+                </div><!-- /.box-body -->
+
+            </div>
+        </div>
+
+    <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="box box-primary">
+            <div class="box-header with-border">
+                <h3 class="box-title">Extra info</h3>
+            </div>
+            <div class="box-body">
+
+                <p><% item.extra %></p>
+
+            </div><!-- /.box-body -->
+
+        </div>
+    </div>
+
+    </div>
