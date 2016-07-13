@@ -32,10 +32,7 @@ class User extends Authenticatable
         return $this->hasMany('\App\PromoRequest','client_id','id');
     }
     
-    public function setPasswordAttribute($password)
-    {   
-        $this->attributes['password'] = bcrypt($password);
-    }
+
    
 
 }
