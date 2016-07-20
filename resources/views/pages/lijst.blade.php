@@ -1,5 +1,5 @@
 <div class="table-responsive">
-    <table class="table no-margin">
+    <table class="table no-margin" id="listtable">
 
         <thead>
             <tr>
@@ -14,9 +14,9 @@
             @foreach($list as $kantoor)
             <tr class="datarow">
                 <td>{{ $kantoor->name }}</td>
-                <td>€ 720</td>
-                <td>€ {{ 720 - $kantoor->budget }}</td>
-                <td>€ {{ $kantoor->budget }}</td>
+                <td>720</td>
+                <td>{{ 720 - $kantoor->budget }}</td>
+                <td>{{ $kantoor->budget }}</td>
             </tr>
             @endforeach
         </tbody>
@@ -41,3 +41,37 @@
         font-family: sans-serif;
     }
 </style>
+
+<script>
+
+
+function exportToExcel(){
+var htmls = "";
+            var uri = 'data:application/vnd.ms-excel;base64,';
+            var template = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40"><head><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>{worksheet}</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body><table>{table}</table></body></html>'; 
+            var base64 = function(s) {
+                return window.btoa(unescape(encodeURIComponent(s)))
+            };
+
+            var format = function(s, c) {
+                return s.replace(/{(\w+)}/g, function(m, p) {
+                    return c[p];
+                })
+            };
+
+            htmls = document.getElementById('listtable').outerHTML;
+
+            var ctx = {
+                worksheet : 'Worksheet',
+                table : htmls
+            }
+
+
+            var link = document.createElement("a");
+            link.download = "lijst_budgetten.xls";
+            link.href = uri + base64(format(template, ctx));
+            link.click();
+}
+exportToExcel();
+
+</script>

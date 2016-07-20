@@ -111,7 +111,7 @@ angular.module('magazijn').controller('adminCtrl',[ '$scope','$http','$location'
         getBeursAanvragen();
         getPromoAanvragen();
         getEmailhandtekeningen();
-        getDrukwerk();
+        //getDrukwerk();
         getAllUsers();
     }
 
