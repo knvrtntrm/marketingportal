@@ -1,7 +1,9 @@
-var app = angular.module('magazijn', ["ngRoute","ngAnimate","ngToast"], function($interpolateProvider) {
+var app = angular.module('magazijn', ["ngRoute","ngAnimate","ngToast","pascalprecht.translate"], function($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 });
+
+
 
 app.config(['$routeProvider', function($routeProvider){
 
@@ -49,4 +51,30 @@ app.config(['$routeProvider', function($routeProvider){
             redirectTo: '/'
         });
 
+}]);
+
+
+app.config(function ($translateProvider) {
+ 
+  $translateProvider.translations('nl', {
+    'DOWNLOAD_IN_PDF': 'Download in PDF of JPG.',
+    'NOTIFICATIONS': 'Notificaties',
+    'LAST_ORDER_PROMO': 'Laatste bestellingen promomateriaal'
+  });
+
+  $translateProvider.translations('fr', {
+    'DOWNLOAD_IN_PDF': 'Téléchanger en PDF ou JPG.',
+    'NOTIFICATIONS': 'Notifications',
+    'LAST_ORDER_PROMO': 'oui, non, baguette, hohohoh i iz french'
+  });
+
+  $translateProvider.preferredLanguage('nl');
+ 
+});
+
+app.controller('Ctrl', ['$translate', '$scope', function ($translate, $scope) {
+ 
+  $scope.changeLanguage = function (langKey) {
+    $translate.use(langKey);
+  };
 }]);

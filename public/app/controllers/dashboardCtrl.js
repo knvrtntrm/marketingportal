@@ -5,6 +5,7 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
         $scope.userdata;
         $rootScope.notifications = [];
 
+         
 
 
         $('.tabular.menu .item').tab();
@@ -77,6 +78,14 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
             getInventoryList();
             getPromoInventoryList();
         }
+
+        //SET LOCALE
+        
+        $rootScope.changeLocal = function(lang){
+            $http.get('/setlocale/'+lang).success(function(response){
+                console.log(lang);
+            });
+        };
 
         // GET INVENTORY LIST ITEMS
 

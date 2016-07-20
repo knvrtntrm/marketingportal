@@ -18,6 +18,7 @@ elixir(function(mix) {
        'vendor/angular.min.js',
         'vendor/angular-animate.min.js',
         'vendor/angular-route.min.js',
+        'vendor/bootstrap-datepicker.min.js',
         'vendor/semantic.min.js',
         'vendor/html2canvas.js',
         'vendor/canvas2svg.js',

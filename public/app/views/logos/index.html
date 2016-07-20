@@ -2,7 +2,7 @@
 <section class="content-header">
     <h1>
         Konvert Logo's
-        <small>Download in PDF, EPS of JPG</small>
+        <small translate>DOWNLOAD_IN_PDF</small>
     </h1>
     <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> dashboard</a></li>
@@ -12,7 +12,7 @@
 
 <br>
 
-<div class="col-md-6 col-lg-4" ng-repeat="logo in logos">
+<div class="col-md-4 col-lg-2" ng-repeat="logo in logos">
     <!-- Widget: user widget style 1 -->
     <div class="box box-widget widget-user logo-box " >
         <!-- Add the bg color to the header using any of the bg-* classes -->
@@ -23,19 +23,13 @@
 
         <div class="box-footer">
             <div class="row">
-                <div class="col-sm-4 border-right">
-                    <div class="description-block">
-                        <h5 class="description-header">.EPS</h5>
-                        <a ng-click="downloadLogo(logo.image, 'eps')"><span class="description-text">Download</span></a>
-                    </div><!-- /.description-block -->
-                </div><!-- /.col -->
-                <div class="col-sm-4 border-right">
+                <div class="col-sm-6 border-right">
                     <div class="description-block">
                         <h5 class="description-header">.JPG</h5>
                         <a ng-click="downloadLogo(logo.image, 'jpg')"><span class="description-text">Download</span></a>
                     </div><!-- /.description-block -->
                 </div><!-- /.col -->
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                     <div class="description-block">
                         <h5 class="description-header">.PDF</h5>
                         <a ng-click="downloadLogo(logo.image, 'pdf')"><span class="description-text">Download</span></a>

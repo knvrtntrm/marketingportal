@@ -20,6 +20,11 @@ use App\Jobs\SendPromoOrderReadyConfirmationEmail;
 
 class DashboardController extends Controller
 {
+
+    public function setLocale($lang){
+        setLocale($lang);
+    }
+
     public function getAllRequests(){
 
         $requests = [];

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>magazijn</title>
+    <title>Konvert marketing</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
@@ -30,7 +30,7 @@
 
 <toast></toast>
 
-<div class="wrapper">
+<div class="wrapper" ng-controller="Ctrl">
 
 
     <header class="main-header">
@@ -53,6 +53,14 @@
             <div class="navbar-custom-menu">
                 <ul class="nav navbar-nav">
 
+                    <li>
+                        <a ng-click="changeLanguage('nl')">NL</a>
+                    </li>
+
+                    <li>
+                        <a ng-click="changeLanguage('fr')">FR</a>
+                    </li>
+
                     <!-- Notifications: style can be found in dropdown.less -->
                     <li class="dropdown notifications-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown">
@@ -60,7 +68,7 @@
                             <span ng-if="notifications.length > 0" class="label label-danger"><% notifications.length %></span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li class="header" ng-if="notifications.length > 0">U heeft <% notifications.length %> notificaties <a ng-click="clearNotifications()" class="pull-right" style="font-size:.8em;">lijst wissen</a></li>
+                            <li class="header" ng-if="notifications.length > 0"><% 'NOTIFICATIONS' | translate %><a ng-click="clearNotifications()" class="pull-right" style="font-size:.8em;">lijst wissen</a></li>
                             <li class="header" ng-if="notifications.length == 0">U heeft geen notificaties </li>
                             <li>
                                 <!-- inner menu: contains the actual data -->
@@ -427,11 +435,12 @@
 
 </div><!-- ./wrapper -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src='https://cdn.rawgit.com/admsev/jquery-play-sound/master/jquery.playSound.js'></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="{{ asset('/js/vendor.js') }}"></script>
 <script src="{{ asset('/js/main.js') }}"></script>
+<script src="{{ asset('/js/angular-translate.min.js') }}"></script>
 <script src="{{ asset('/app/controllers/dashboardCtrl.js') }}"></script>
 <script src="{{ asset('/app/controllers/createRequestCtrl.js') }}"></script>
 <script src="{{ asset('/app/controllers/createEmailhandtekeningCtrl.js') }}"></script>

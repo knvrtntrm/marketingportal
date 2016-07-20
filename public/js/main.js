@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 "use strict";
 
-var app = angular.module('magazijn', ["ngRoute", "ngAnimate", "ngToast"], function ($interpolateProvider) {
+var app = angular.module('magazijn', ["ngRoute", "ngAnimate", "ngToast", "pascalprecht.translate"], function ($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 });
@@ -50,6 +50,30 @@ app.config(['$routeProvider', function ($routeProvider) {
     }).otherwise({
         redirectTo: '/'
     });
+}]);
+
+app.config(function ($translateProvider) {
+
+    $translateProvider.translations('nl', {
+        'DOWNLOAD_IN_PDF': 'Download in PDF of JPG.',
+        'NOTIFICATIONS': 'Notificaties',
+        'LAST_ORDER_PROMO': 'Laatste bestellingen promomateriaal'
+    });
+
+    $translateProvider.translations('fr', {
+        'DOWNLOAD_IN_PDF': 'Téléchanger en PDF ou JPG.',
+        'NOTIFICATIONS': 'Notifications',
+        'LAST_ORDER_PROMO': 'oui, non, baguette, hohohoh i iz french'
+    });
+
+    $translateProvider.preferredLanguage('nl');
+});
+
+app.controller('Ctrl', ['$translate', '$scope', function ($translate, $scope) {
+
+    $scope.changeLanguage = function (langKey) {
+        $translate.use(langKey);
+    };
 }]);
 
 },{}]},{},[1]);

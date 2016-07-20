@@ -31,6 +31,7 @@ Route::get('/update/promo/{code}','DashboardController@promoUpdate');
 Route::get('/promomateriaal/all','MainController@getAllPromoItems');
 Route::get('/beursmateriaal/all','MainController@getAllBeursItems');
 
+Route::get('/setlocale/{lang}','DashboardController@setLocale');
 
 Route::group(['middleware' => ['web']], function () {
     Route::auth();
