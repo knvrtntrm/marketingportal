@@ -54,16 +54,9 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 app.config(function ($translateProvider) {
 
-    $translateProvider.translations('nl', {
-        'DOWNLOAD_IN_PDF': 'Download in PDF of JPG.',
-        'NOTIFICATIONS': 'Notificaties',
-        'LAST_ORDER_PROMO': 'Laatste bestellingen promomateriaal'
-    });
-
-    $translateProvider.translations('fr', {
-        'DOWNLOAD_IN_PDF': 'Téléchanger en PDF ou JPG.',
-        'NOTIFICATIONS': 'Notifications',
-        'LAST_ORDER_PROMO': 'oui, non, baguette, hohohoh i iz french'
+    $translateProvider.useStaticFilesLoader({
+        prefix: 'lang/locale-',
+        suffix: '.json'
     });
 
     $translateProvider.preferredLanguage('nl');

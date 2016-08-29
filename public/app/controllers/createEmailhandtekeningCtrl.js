@@ -71,22 +71,26 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
         ctx.font = '8pt eurostilebold';
         ctx.fillText("T", 20, 75 );
 
+        ctx.fillStyle = '#000';
+        ctx.font = '8pt eurostilebold';
+        ctx.fillText($scope.userdata.phone, 30, 75 );
+
+        if($scope.userdata.fax != ""){
+
         ctx.fillStyle = '#009fe3';
         ctx.font = '8pt eurostilebold';
         ctx.fillText("F", 150, 75 );
 
         ctx.fillStyle = '#000';
         ctx.font = '8pt eurostilebold';
-        ctx.fillText($scope.userdata.phone, 30, 75 );
-
-        ctx.fillStyle = '#000';
-        ctx.font = '8pt eurostilebold';
         ctx.fillText($scope.userdata.fax, 160, 75 );
+
+        }
 
 
         var naam = $scope.naam;
         naam = naam.replace(/\s+/g, '');
-        $scope.nameemail = $scope.voornaam + "." + naam;
+        $scope.fullname = $scope.voornaam + "." + naam;
 
         if($scope.officemanager){
             ctx.fillStyle = '#009fe3';
@@ -106,16 +110,16 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
             switch($scope.userdata.section)
             {
                 case "KIV":
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konvert.be", 170, 90 );
+                    ctx.fillText($scope.email.toLowerCase() + "@konvert.be", 170, 90 );
                     break;
                 case "KO":
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konvertoffice.be", 170, 90 );
+                    ctx.fillText($scope.email.toLowerCase() + "@konvertoffice.be", 170, 90 );
                     break;
                 case "KK":
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konstrukt.be", 170, 90 );
+                    ctx.fillText($scope.email.toLowerCase() + "@konstrukt.be", 170, 90 );
                     break;
                 default:
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konvert.be", 170, 90 );
+                    ctx.fillText($scope.email.toLowerCase() , 170, 90 );
             }
 
         }else{
@@ -128,16 +132,16 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
             switch($scope.userdata.section)
             {
                 case "KIV":
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konvert.be", 30, 90 );
+                    ctx.fillText($scope.email.toLowerCase() + "@konvert.be", 30, 90 );
                     break;
                 case "KO":
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konvertoffice.be", 30, 90 );
+                    ctx.fillText($scope.email.toLowerCase() + "@konvertoffice.be", 30, 90 );
                     break;
                 case "KK":
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konstrukt.be", 30, 90 );
+                    ctx.fillText($scope.email.toLowerCase() + "@konstrukt.be", 30, 90 );
                     break;
                 default:
-                    ctx.fillText($scope.nameemail.toLowerCase() + "@konvert.be", 30, 90 );
+                    ctx.fillText($scope.email.toLowerCase() , 30, 90 );
             }
 
         }

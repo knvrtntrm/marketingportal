@@ -3,13 +3,13 @@
     <div class="info-box bg-red">
       <span class="info-box-icon"><i class="ion ion-social-euro"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">BUDGET</span>
+        <span class="info-box-text"><% 'BUDGET' | translate %></span>
         <span class="info-box-number">€<% userdata.budget %></span>
         <div class="progress">
           <div class="progress-bar budget-progress-bar"></div>
         </div>
                       <span class="progress-description">
-                        Kantoorbudget 2016
+                        <% 'BUDGET_OFFICE' | translate %> 2016
                       </span>
       </div><!-- /.info-box-content -->
     </div><!-- /.info-box -->
@@ -18,7 +18,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-red"><i class="ion ion-speakerphone"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Promo bestellingen</span>
+        <span class="info-box-text"><% 'PROMO_ORDER' | translate %></span>
         <span class="info-box-number"><% promorequests.length %></span>
       </div><!-- /.info-box-content -->
     </div>
@@ -27,7 +27,7 @@
     <div class="info-box">
       <span class="info-box-icon bg-red"><i class="ion ion-easel"></i></span>
       <div class="info-box-content">
-        <span class="info-box-text">Beurs bestellingen</span>
+        <span class="info-box-text"><% 'BEURS_ORDER' | translate %></span>
         <span class="info-box-number"><% requests.length %></span>
       </div><!-- /.info-box-content -->
     </div>
@@ -43,15 +43,15 @@
 
       </div><!-- /.box-header -->
       <div class="box-body">
-        <h3 ng-if="promorequests.length == 0">U heeft nog geen bestellingen voor promomateriaal</h3>
+        <h3 ng-if="promorequests.length == 0"><% 'NO_ORDER_PROMO' | translate %></h3>
         <div class="table-responsive">
           <table ng-if="promorequests.length !== 0" class="table no-margin">
             <thead>
             <tr>
               <th>ID</th>
-              <th>Aantal items</th>
+              <th><% 'ITEM' 'AMOUNT' | translate %></th>
               <th>Aangevraagd op</th>
-              <th>Prijs</th>
+              <th><% 'PRICE' | translate %></th>
               <th>Status</th>
             </tr>
             </thead>
@@ -70,7 +70,7 @@
         </div><!-- /.table-responsive -->
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
-        <a href="#/promo/aanvraag" class="btn btn-sm btn-info btn-flat pull-left">Plaats nieuwe bestelling</a>
+        <a href="#/promo/aanvraag" class="btn btn-sm btn-info btn-flat pull-left"><% 'NEW_ORDER' | translate %></a>
         <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
       </div><!-- /.box-footer -->
     </div><!-- /.box -->
@@ -79,18 +79,18 @@
   <div class="col-md-6">
     <div class="box box-info">
       <div class="box-header with-border">
-        <h3 class="box-title">Laatste bestellingen beursmateriaal</h3>
+        <h3 class="box-title"><% 'LAST_ORDER_BEURS' | translate %></h3>
 
       </div><!-- /.box-header -->
       <div class="box-body">
-        <h3 ng-if="requests.length == 0">U heeft nog geen bestellingen voor beursmateriaal</h3>
+        <h3 ng-if="requests.length == 0"><% 'NO_ORDER_BEURS' | translate %></h3>
         <div class="table-responsive">
           <table ng-if="requests.length !== 0" class="table no-margin">
 
             <thead>
             <tr>
               <th>ID</th>
-              <th>Aantal items</th>
+              <th><% 'ITEM' 'AMOUNT' | translate %></th>
               <th>Aangevraagd op</th>
               <th>Beurs/evenement</th>
               <th>Status</th>
@@ -112,7 +112,7 @@
         </div><!-- /.table-responsive -->
       </div><!-- /.box-body -->
       <div class="box-footer clearfix">
-        <a href="#/beurs/aanvraag" class="btn btn-sm btn-info btn-flat pull-left">Plaats nieuwe bestelling</a>
+        <a href="#/beurs/aanvraag" class="btn btn-sm btn-info btn-flat pull-left"><% 'NEW_ORDER' | translate %></a>
         <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
       </div><!-- /.box-footer -->
     </div><!-- /.box -->

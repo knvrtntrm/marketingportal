@@ -1,7 +1,7 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Konvert Logo's
+        Konvert <% 'LOGOS' | translate %>
         <small translate>DOWNLOAD_IN_PDF</small>
     </h1>
     <!-- <ol class="breadcrumb">
@@ -26,13 +26,13 @@
                 <div class="col-sm-6 border-right">
                     <div class="description-block">
                         <h5 class="description-header">.JPG</h5>
-                        <a ng-click="downloadLogo(logo.image, 'jpg')"><span class="description-text">Download</span></a>
+                        <a ng-click="downloadLogo(logo.image, 'jpg')"><span class="description-text"><% 'DOWNLOAD' | translate %></span></a>
                     </div><!-- /.description-block -->
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <div class="description-block">
                         <h5 class="description-header">.PDF</h5>
-                        <a ng-click="downloadLogo(logo.image, 'pdf')"><span class="description-text">Download</span></a>
+                        <a ng-click="downloadLogo(logo.image, 'pdf')"><span class="description-text"><% 'DOWNLOAD' | translate %></span></a>
                     </div><!-- /.description-block -->
                 </div><!-- /.col -->
             </div><!-- /.row -->

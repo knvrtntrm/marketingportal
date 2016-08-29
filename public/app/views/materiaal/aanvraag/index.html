@@ -3,8 +3,8 @@
 
 <section class="content-header">
     <h1>
-        Beursmateriaal
-        <small>bestellen</small>
+        <% 'BEURS_MATERIAAL' | translate %>
+        <!-- <small>bestellen</small> -->
     </h1>
     <!-- <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> Dashboard</a></li>
@@ -19,14 +19,14 @@
     <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Overzicht bestelling beursmateriaal</h3>
+                <h3 class="box-title"><% 'BEURS_ORDER_OVERVIEW' | translate %></h3>
                 <br><br>
                 <div class="form-group">
-                    <label><strong>Waar wordt het materiaal gebruikt? (locatie)</strong></label>
-                    <input type="text" class="form-control locatiefield" placeholder="Waar wordt het materiaal gebruikt?" ng-model="locatie" required>
+                    <label><strong><% 'BEURS_WHERE' | translate %></strong></label>
+                    <input type="text" class="form-control locatiefield" placeholder="<% 'BEURS_WHERE' | translate %>" ng-model="locatie" required>
                     <br>
-                    <label><strong>Datum van de beurs/evenement</strong></label>
-                    <input type="text" class="form-control datumfield datepicker" placeholder="Datum" ng-model="datum" required>
+                    <label><strong><% 'BEURS_DATE' | translate %></strong></label>
+                    <input type="text" class="form-control datumfield datepicker" placeholder="<% 'DATE' | translate %>" ng-model="datum" required>
                 </div>
 
             </div><!-- /.box-header -->
@@ -36,9 +36,9 @@
 
                         <thead>
                             <tr>
-                                <th>Afbeelding</th>
-                                <th>Item</th>
-                                <th>Aantal</th>
+                                <th><% 'IMAGE' | translate %></th>
+                                <th><% 'ITEM' | translate %></th>
+                                <th><% 'AMOUNT' | translate %></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -62,7 +62,7 @@
 
             </div><!-- /.box-body -->
             <div class="box-footer clearfix">
-                <a ng-if="currentRequestList.length > 0" ng-click="saveRequest()" class="btn btn-sm btn-info btn-flat pull-left">Bestelling plaatsen</a>
+                <a ng-if="currentRequestList.length > 0" ng-click="saveRequest()" class="btn btn-sm btn-info btn-flat pull-left"><% 'PLACE_ORDER' | translate %></a>
                 <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
             </div><!-- /.box-footer -->
         </div><!-- /.box -->
@@ -76,14 +76,14 @@
     <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Beurs materiaal</h3>
+                <h3 class="box-title"><% 'BEURS_MATERIAAL' | translate %></h3>
 
             </div><!-- /.box-header -->
             <div class="box-body">
 
                 <div class="form-group">
-                    <label>Zoeken</label>
-                    <input type="text" class="form-control" placeholder="Zoek ..." ng-model="search">
+                    <label><% 'ZOEKEN' | translate %></label>
+                    <input type="text" class="form-control" placeholder="<% 'ZOEK' | translate %>" ng-model="search">
                 </div>
 
                 <ul class="products-list product-list-in-box">
@@ -94,7 +94,7 @@
                         <div class="product-info">
                             <a href="javascript::;" class="product-title"><% item.name %></a>
                             <span class="product-description">
-                                <% item.amount %> stuk(s) in stock
+                                <% item.amount %> stuk(s) <% 'IN_STOCK' | translate %>
                             </span>
                         </div>
                     </li><!-- /.item -->

@@ -231,8 +231,8 @@ class DashboardController extends Controller
         return "Marked as read";
     }
 
-    public function clearNotificationsList($id){
-        $nots = Notification::where('client_id',$id)->where('read',0)->get();
+    public function clearNotificationsList(){
+        $nots = Notification::where('client_id',Auth::user()->id)->where('read',0)->get();
         foreach($nots as $not){
             $not->read = 1;
             $not->save();

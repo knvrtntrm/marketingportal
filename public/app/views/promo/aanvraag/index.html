@@ -1,7 +1,7 @@
 <section class="content-header">
     <h1>
-        Promomateriaal
-        <small>bestellen</small>
+        <% 'PROMO_MATERIAAL' | translate %>
+        <!-- <small>bestellen</small> -->
     </h1>
     <!-- <ol class="breadcrumb">
         <li><a href="/"><i class="fa fa-dashboard"></i> dashboard</a></li>
@@ -16,13 +16,13 @@
         <div class="info-box bg-red">
             <span class="info-box-icon"><i class="fa fa-euro"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Totaalprijs</span>
+                <span class="info-box-text"><% 'PRICE' | translate %></span>
                 <span class="info-box-number">€<% totaalprijs %></span>
                 <div class="progress">
                     <div class="progress-bar ordering-progress-bar"></div>
                 </div>
                 <span class="progress-description">
-                    Totale prijs voor deze bestelling
+                    <% 'TOTAL_PRICE_ORDER' | translate %>
                 </span>
             </div><!-- /.info-box-content -->
         </div><!-- /.info-box -->
@@ -32,13 +32,13 @@
         <div class="info-box bg-red">
             <span class="info-box-icon"><i class="fa fa-euro"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">Totaal budget</span>
+                <span class="info-box-text"><% 'TOTAL_BUDGET' | translate %></span>
                 <span class="info-box-number">€<% userdata.budget - totaalprijs %></span>
                 <div class="progress">
                     <div class="progress-bar overzicht-budget-progress-bar"></div>
                 </div>
                 <span class="progress-description">
-                    Resterend budget na bestelling
+                    <% 'BUDGET_LEFT_AFTER_ORDER' | translate %>
                 </span>
             </div><!-- /.info-box-content -->
         </div><!-- /.info-box -->
@@ -51,7 +51,7 @@
     <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Overzicht bestelling promomateriaal</h3>
+                <h3 class="box-title"><% 'PROMO_ORDER_OVERVIEW' | translate %></h3>
 
             </div><!-- /.box-header -->
             <div class="box-body">
@@ -60,12 +60,12 @@
 
                         <thead>
                             <tr>
-                                <th>afbeelding</th>
-                                <th>Item</th>
-                                <th>Prijs/st</th>
-                                <th>Stock</th>
-                                <th>Aantal</th>
-                                <th>Prijs</th>
+                                <th><% 'IMAGE' | translate %></th>
+                                <th><% 'ITEM' | translate %></th>
+                                <th><% 'PRICE_PIECE' | translate %></th>
+                                <th><% 'STOCK' | translate %></th>
+                                <th><% 'AMOUNT' | translate %></th>
+                                <th><% 'PRICE' | translate %></th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -92,7 +92,7 @@
 
             </div><!-- /.box-body -->
             <div class="box-footer clearfix">
-                <a ng-if="currentRequestList.length > 0 && userdata.budget - totaalprijs > 0" href="#aanvragen" ng-click="savePromoRequest()" class="btn btn-sm btn-info btn-flat pull-left">Bestelling plaatsen</a>
+                <a ng-if="currentRequestList.length > 0 && userdata.budget - totaalprijs > 0" href="#aanvragen" ng-click="savePromoRequest()" class="btn btn-sm btn-info btn-flat pull-left"><% 'PLACE_ORDER' | translate %></a>
                 <!--<a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>-->
             </div><!-- /.box-footer -->
         </div><!-- /.box -->
@@ -106,13 +106,13 @@
     <div class="col-md-12">
         <div class="box box-info">
             <div class="box-header with-border">
-                <h3 class="box-title">Promo materiaal</h3>
+                <h3 class="box-title"><% 'PROMO_MATERIAAL' | translate %></h3>
 
             </div><!-- /.box-header -->
             <div class="box-body">
 
                 <div class="form-group">
-                    <label>Zoeken</label>
+                    <label><% 'ZOEKEN' | translate %></label>
                     <input type="text" class="form-control" placeholder="Zoek ..." ng-model="search">
                 </div>
 
@@ -124,8 +124,8 @@
                         <div class="product-info">
                             <a href="javascript::;" class="product-title"><% item.name %><span class="label label-success pull-right">€<% item.price %> / stuk</span></a>
                             <span class="product-description">
-                                <% item.pack %> stuk(s) per pakket - <% item.amountinstock %> stuk(s) in stock
-                            </span>
+                                <% item.pack %> stuk(s) <% 'PER_PACKET' | translate %> - <% item.amountinstock %> stuk(s) <% 'IN_STOCK' | translate %>
+                            </span> 
                         </div>
                     </li><!-- /.item -->
 
