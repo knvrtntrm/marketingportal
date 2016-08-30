@@ -90,6 +90,8 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/orders/list','AdminController@getAllInfoInList');
         Route::get('/users/all', 'AdminController@getAllUsers');
         Route::post('/user/update','AdminController@updateUser');
+
+        Route::post('/password/manualreset','DashboardController@changePassword');
         
     });
 

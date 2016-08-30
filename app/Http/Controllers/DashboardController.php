@@ -240,4 +240,10 @@ class DashboardController extends Controller
         return "LIST CLEARED";
     }
 
+    public function changePassword(Request $request){
+        $user = Auth::user();
+        $user->password = bcrypt($request->password);
+        $user->save();
+    }
+
 }

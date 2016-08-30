@@ -181,6 +181,12 @@
                     </a>
                 </li> -->
 
+                <li>
+                    <a href="#/instellingen">
+                        <i class="fa fa-cogs"></i> <span>Instellingen</span>
+                    </a>
+                </li>
+
                 @elseif(Auth::user()->admin)
 
                     <li>
@@ -253,7 +259,7 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>v.</b> 0.4.2 Beta
+            <b>v</b>0.4.2 Beta
         </div>
         <strong>Copyright &copy; 2016 - Konvert NV</strong> All rights reserved.
     </footer>
@@ -277,6 +283,7 @@
 <script src="{{ asset('/app/controllers/orderDetailCtrl.js') }}"></script>
 <script src="{{ asset('/app/controllers/drukwerkCtrl.js') }}"></script>
 <script src="{{ asset('/app/controllers/drukwerkDetailCtrl.js') }}"></script>
+<script src="{{ asset('/app/controllers/settingsCtrl.js') }}"></script>
 <!-- FastClick -->
 <script src="plugins/fastclick/fastclick.min.js"></script>
 <!-- AdminLTE App -->

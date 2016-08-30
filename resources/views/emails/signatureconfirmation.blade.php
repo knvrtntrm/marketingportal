@@ -14,7 +14,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 <br>
 
 <div class="alert alert-success">
-	<p>Emailhandtekening voor {{ $signature_name }} is goedgekeurd! <a href="marketingkonvertbe.webhosting.be" target='_blank'>Ga naar het marketing portaal</a> om deze te downloaden.</p>
+	<p>Emailhandtekening voor {{ $signature_name }} is goedgekeurd! <a href="marketing.konvert.be" target='_blank'>Ga naar het marketing portaal</a> om deze te downloaden.</p>
 </div>
 
 </div>

@@ -19,6 +19,7 @@
 	"BUDGET_LEFT_AFTER_ORDER" 	: "Resterend budget na bestelling",
 	"PROMO_ORDER_OVERVIEW" 		: "Overzicht bestelling promomateriaal",
 	"PROMO_MATERIAAL" 			: "Promo materiaal",
+	"BEURS_MATERIAAL"			: "Beurs materiaal",
 	"ZOEKEN" 					: "Zoeken",
 	"ZOEK" 						: "Zoek",
 	"IMAGE" 					: "afbeelding",
@@ -41,6 +42,7 @@
 	"PER_PACKET"				: "per pakket",
 	"PER_PIECE"					: "/ stuk",
 	"PLACE_ORDER"				: "Bestelling plaatsen",
-	"DATE"						: "Datum"
+	"DATE"						: "Datum",
+	"PIECES"					: "stuk(s)"
 
 }

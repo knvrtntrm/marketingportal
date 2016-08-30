@@ -42,6 +42,7 @@
 	"PER_PACKET"					: "par packet",
 	"PER_PIECE"						: "/ pièce",
 	"PLACE_ORDER"					: "Passer la commande",
-	"DATE"							: "Date"
+	"DATE"							: "Date",
+	"PIECES"						: "pièce(s)"
 
 }

@@ -152,14 +152,26 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
     $scope.confirmSignature = function(){
         $scope.imagedir = $scope.nameemail;
 
-        $signaturedata = {
+        if($scope.functie == "Office manager"){
+            $signaturedata = {
             'user_id' : $scope.userdata.id,
             'name' : ""+$scope.voornaam+" "+$scope.naam,
             'function': $scope.functie,
             'image': ""+$scope.voornaam+""+$scope.naam,
             'gsm': $scope.gsmnummer,
             'approved': 0
+            }
+        }else{
+            $signaturedata = {
+            'user_id' : $scope.userdata.id,
+            'name' : ""+$scope.voornaam+" "+$scope.naam,
+            'function': $scope.functie,
+            'image': ""+$scope.voornaam+""+$scope.naam,
+            'approved': 0
+            }
         }
+
+        
         
         var dataURL = canvas.toDataURL('image/jpg');
         $http.post('/emailhandtekeningen/image',{'filename':$scope.voornaam+""+$scope.naam, 'image':dataURL}).success(function(data){console.log(data)});

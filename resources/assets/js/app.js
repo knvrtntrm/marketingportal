@@ -47,6 +47,9 @@ app.config(['$routeProvider', function($routeProvider){
         }).when('/drukwerk',{
             templateUrl: 'app/views/drukwerk/index.html',
             controller: 'drukwerkCtrl'
+        }).when('/instellingen',{
+            templateUrl: 'app/views/dashboard/settings.html',
+            controller: 'settingsCtrl'
         }).otherwise({
             redirectTo: '/'
         });
