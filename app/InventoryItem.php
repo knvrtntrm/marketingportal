@@ -25,4 +25,5 @@ class InventoryItem extends Model
       'condition_id',
       'inStock'
     ];
+
 }

@@ -43,6 +43,19 @@
 	"PER_PIECE"						: "/ pièce",
 	"PLACE_ORDER"					: "Passer la commande",
 	"DATE"							: "Date",
-	"PIECES"						: "pièce(s)"
+	"PIECES"						: "pièce(s)",
+	"EMAIL_REGISTER_SUCCESS"		: "...",
+	"ERROR_LOCATION_DATE"			: "...",
+	"ORDER_REGISTER_SUCCESS"		: "...",
+	"ERROR_OVER_BUDGET"				: "...",
+	"AANGEVRAAGD_OP"				: "...",
+	"STATUS"						: "...",
+	"BEURS_EVENEMENT"				: "...",
+	"PASSWORD"						: "...",
+	"CHANGE_PASSWORD"				: "...",
+	"PASSWORD_REPEAT"				: "...",
+	"NEW_PASSWORD"					: "...",
+	"SAVE"							: "...",
+	"SETTINGS"						: "..."
 
 }

@@ -10,14 +10,15 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Bestelling staat klaar
+        Bestelling staat klaar / 
         <small>KVRT {{ $order->id }}</small>
     </h1>
 </section>
 
 <br>
 <div class="alert alert-success">
-    <p>Onderstaande bestelling staat klaar en zal met de eerstvolgende interne post worden verzonden.</p>
+    <p>Onderstaande bestelling staat klaar en zal met de eerstvolgende interne post worden verzonden. <br>
+    </p>
 </div>
 <br>
 

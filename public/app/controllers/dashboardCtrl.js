@@ -1,4 +1,4 @@
-angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$location', 'ngToast', '$rootScope', function ($scope, $http, $location, ngToast, $rootScope) {
+angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$location', 'ngToast', '$rootScope','$filter', function ($scope, $http, $location, ngToast, $rootScope, $filter) {
 
         $scope.requests = [];
         $scope.promorequests = [];
@@ -199,7 +199,7 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
 
                 ngToast.create({
                     className: 'danger',
-                    content: 'Gelieve de locatie en datum van het evenement of de beurs in te vullen.'
+                    content: $filter('translate')('ERROR_LOCATION_DATE')
                 });
                 
                 return false;
@@ -227,7 +227,7 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
                     $http.post('/beurs/request/save', requestData).success(function (data) {
                         ngToast.create({
                             className: 'success',
-                            content: 'Bedankt, we hebben uw bestelling goed ontvangen! U krijgt een bevestigingsmail.'
+                            content: $filter('translate')('ORDER_REGISTER_SUCCESS')
                         });
                         getRequests();
                     });
@@ -266,7 +266,7 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
                 $http.post('/promo/request/save', requestData).success(function (data) {
                     ngToast.create({
                         className: 'success',
-                        content: 'Bedankt, we hebben uw bestelling goed ontvangen! U krijgt een bevestigingsmail.'
+                        content: $filter('translate')('ORDER_REGISTER_SUCCESS')
                     });
                     getPromoRequests();
                 });
@@ -328,7 +328,7 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
             if (($scope.userdata.budget - $scope.totaalprijs) < 0) {
                 ngToast.create({
                     className: 'danger',
-                    content: 'Let op! U bent over uw budget gegaan!'
+                    content: $filter('translate')('ERROR_OVER_BUDGET')
                 });
             }
 

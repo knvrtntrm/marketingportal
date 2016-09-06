@@ -73,7 +73,7 @@
 
                             <tr class="datarow" ng-repeat="item in currentRequestList">
                                 <td><div class="product-img">
-                                    <img src="/images/test.png" alt="Product Image" style="width:60px;">
+                                    <img src="/images/promomateriaal/<% item.image %>.png" alt="Product Image" style="width:60px;">
                                 </div></td>
                                 <td><% item.name %></td>
                                 <td>€<% item.price %></td>
@@ -113,16 +113,18 @@
 
                 <div class="form-group">
                     <label><% 'ZOEKEN' | translate %></label>
-                    <input type="text" class="form-control" placeholder="Zoek ..." ng-model="search">
+                    <input type="text" class="form-control" placeholder="<% 'ZOEK' | translate %> ..." ng-model="search">
                 </div>
 
                 <ul class="products-list product-list-in-box">
                     <li class="item" ng-repeat="item in promoItems| filter:search" ng-click="addPromoItemToRequestList(item)">
                         <div class="product-img">
-                            <img src="/images/test.png" alt="Product Image">
+                            <img style="width: 120px;
+    height: 120px;
+    padding: 10px;" src="/images/promomateriaal/<% item.image %>.png" alt="Product Image">
                         </div>
-                        <div class="product-info">
-                            <a href="javascript::;" class="product-title"><% item.name %><span class="label label-success pull-right">€<% item.price %> / stuk</span></a>
+                        <div class="product-info" style="margin-top:36px;">
+                            <a href="javascript::;" class="product-title"><% item.name %><span class="label label-success pull-right">€<% item.price %> <% 'PER_PIECE' | translate %></span></a>
                             <span class="product-description">
                                 <% item.pack %> <% 'PIECES' | translate %> <% 'PER_PACKET' | translate %> - <% item.amountinstock %> <% 'PIECES' | translate %> <% 'IN_STOCK' | translate %>
                             </span> 

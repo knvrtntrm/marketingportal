@@ -61,7 +61,7 @@
                         <a ng-click="changeLanguage('fr')">FR</a>
                     </li>
 
-                    <!-- Notifications: style can be found in dropdown.less -->
+                    <!-- Notifications: style can be found in dropdown.less 
                     <li class="dropdown notifications-menu">
                         <a class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-bell-o"></i>
@@ -71,7 +71,7 @@
                             <li class="header" ng-if="notifications.length > 0"><% 'NOTIFICATIONS' | translate %><a ng-click="clearNotifications()" class="pull-right" style="font-size:.8em;">lijst wissen</a></li>
                             <li class="header" ng-if="notifications.length == 0"><% 'NO_NOTIFICATIONS' | translate %></li>
                             <li>
-                                <!-- inner menu: contains the actual data -->
+                                 inner menu: contains the actual data 
                                 <ul class="menu">
                                     <li ng-repeat="not in notifications" class="notification-item">
                                         <a ng-click="notificationDetail(not)">
@@ -82,7 +82,7 @@
                             </li>
 
                         </ul>
-                    </li>
+                    </li>-->
 
                     <!-- User Account: style can be found in dropdown.less 
                     <li class="dropdown user user-menu">
@@ -183,7 +183,7 @@
 
                 <li>
                     <a href="#/instellingen">
-                        <i class="fa fa-cogs"></i> <span>Instellingen</span>
+                        <i class="fa fa-cogs"></i> <span><% 'SETTINGS' | translate %></span>
                     </a>
                 </li>
 
@@ -197,7 +197,7 @@
 
                     <li>
                         <a href="#/admin/emailhandtekeningen">
-                            <i class="fa fa-paint-brush"></i> <span>EMAILSIGNATURE</span><small class="label pull-right bg-red" ng-if="amountofnewsignatures"><% amountofnewsignatures %></small>
+                            <i class="fa fa-paint-brush"></i> <span><% 'EMAILSIGNATURE' | translate %></span><small class="label pull-right bg-red" ng-if="amountofnewsignatures"><% amountofnewsignatures %></small>
                         </a>
                     </li>
 

@@ -1,4 +1,4 @@
-angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$http','$location','ngToast', function($scope,$http,$location,ngToast){
+angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$http','$location','ngToast','$filter', function($scope,$http,$location,ngToast,$filter){
 
     var getUserInfo = function(){
         $http.get('/user').success(function(data){$scope.userdata = data;});
@@ -179,7 +179,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
         $http.post('/emailhandtekeningen/save', $signaturedata).success(function(data){
             ngToast.create({
                 className: 'success',
-                content: 'De email handtekening werd succesvol geregistreerd voor goedkeuring!'
+                content: $filter('translate')('EMAIL_REGISTER_SUCCESS')
             });
             resetForm();
             getSignatures();

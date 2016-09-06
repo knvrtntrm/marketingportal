@@ -43,6 +43,19 @@
 	"PER_PIECE"					: "/ stuk",
 	"PLACE_ORDER"				: "Bestelling plaatsen",
 	"DATE"						: "Datum",
-	"PIECES"					: "stuk(s)"
+	"PIECES"					: "stuk(s)",
+	"EMAIL_REGISTER_SUCCESS"	: "De email handtekening werd succesvol geregistreerd voor goedkeuring!",
+	"ERROR_LOCATION_DATE"		: "Gelieve de locatie en datum van het evenement of de beurs in te vullen.",
+	"ORDER_REGISTER_SUCCESS"	: "Bedankt, we hebben uw bestelling goed ontvangen! U krijgt een bevestigingsmail.",
+	"ERROR_OVER_BUDGET"			: "Let op! U bent over uw budget gegaan!",
+	"AANGEVRAAGD_OP"			: "Aangevraagd op",
+	"STATUS"					: "Status",
+	"BEURS_EVENEMENT"			: "Beurs/evenement",
+	"PASSWORD"					: "Wachtwoord",
+	"CHANGE_PASSWORD"			: "Wachtwoord wijzigen",
+	"PASSWORD_REPEAT"			: "Wachtwoord herhalen",
+	"NEW_PASSWORD"				: "Nieuw wachtwoord",
+	"SAVE"						: "Opslaan",
+	"SETTINGS"					: "Instellingen"
 
 }
