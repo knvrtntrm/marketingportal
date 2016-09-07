@@ -56,6 +56,18 @@
 	"PASSWORD_REPEAT"			: "Wachtwoord herhalen",
 	"NEW_PASSWORD"				: "Nieuw wachtwoord",
 	"SAVE"						: "Opslaan",
-	"SETTINGS"					: "Instellingen"
+	"SETTINGS"					: "Instellingen",
+	"VAN"						: "Van",
+	"VOOR"						: "Voor",
+	"BESTELLING"				: "Bestelling",
+	"EXTRAINFO"					: "Extra info",
+	"LOCATION"					: "Locatie",
+	"STATEOFORDER"				: "Status van de bestelling",
+	"ORDERINBEHANDELING"		: "De bestelling is in behandeling",
+	"ORDERWILLSHIPON"			: "De bestelling werd verzonden op",
+	"PRODUCT"					: "Product",
+	"SENT"						: "Verzonden",
+	"IN_BEHANDELING"			: "In behandeling",
+	"READY"						: "Klaar"
 
 }

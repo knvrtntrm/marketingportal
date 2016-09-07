@@ -1,13 +1,13 @@
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Bestelling
+        <% 'BESTELLING' | translate %>
         <small>KVRT<% order.id %></small>
     </h1>
-    <ol class="breadcrumb">
+    <!-- <ol class="breadcrumb">
         <li><a href="#aanvragen">aanvragen</a></li>
         <li class="active">bestelling KVRT<% order.id %></li>
-    </ol>
+    </ol> -->
 </section>
 
 <!--<div class="pad margin no-print">
@@ -23,7 +23,7 @@
     <!-- info row -->
     <div class="row invoice-info">
         <div class="col-sm-4 invoice-col">
-            <strong>Van</strong>
+            <strong><% 'VAN' | translate %></strong>
             <address>
                 <strong>Konvert Marketing</strong><br>
                 President Kennedypark 16<br>
@@ -33,7 +33,7 @@
             </address>
         </div><!-- /.col -->
         <div class="col-sm-4 invoice-col">
-            <strong>Voor</strong>
+            <strong><% 'VOOR' | translate %></strong>
             <address>
                 <strong><% order.client.name %></strong><br>
                 <% order.client.address %><br>
@@ -43,11 +43,11 @@
             </address>
         </div><!-- /.col -->
         <div class="col-sm-4 invoice-col">
-            <strong>Extra info</strong>
+            <strong><% 'EXTRAINFO' | translate %></strong>
             <address>
                 
-                Locatie: <% order.locatie %><br>
-                Datum: <% order.datum %>
+                <% 'LOCATION' | translate %>: <% order.locatie %><br>
+                <% 'DATE' | translate %>: <% order.datum %>
             </address>
         </div><!-- /.col -->
 
@@ -59,8 +59,8 @@
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Hoev.</th>
-                    <th>Product</th>
+                    <th><% 'AMOUNT' | translate %></th>
+                    <th><% 'PRODUCT' | translate %></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -76,13 +76,13 @@
 
     <div class="row">
         <div class="col-xs-6">
-            <p class="lead">Status levering:</p>
+            <p class="lead"><% 'STATEOFORDER' | translate %>:</p>
 
             <p class="text-muted" style="margin-top: 10px;" ng-if="order.status == 3">
-                <i class="fa fa-check"></i> De bestelling werd verzonden op <strong><% order.updated_at.slice(0,10) %></strong>
+                <i class="fa fa-check"></i> <% 'ORDERWILLSHIPON' | translate %> <strong><% order.updated_at.slice(0,10) %></strong>
             </p>
             <p class="text-muted" style="margin-top: 10px;" ng-if="order.status == 1">
-                <i class="fa fa-circle-o"></i> De bestelling is in behandeling
+                <i class="fa fa-circle-o"></i> <% 'ORDERINBEHANDELING' | translate %> 
             </p>
         </div><!-- /.col -->
         <div class="col-xs-6">

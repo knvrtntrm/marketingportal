@@ -10,15 +10,17 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Bestelling staat klaar / 
+        Bestelling staat klaar / Commande prête
         <small>KVRT {{ $order->id }}</small>
     </h1>
 </section>
 
 <br>
 <div class="alert alert-success">
-    <p>Onderstaande bestelling staat klaar en zal met de eerstvolgende interne post worden verzonden. <br>
+    <p>Onderstaande bestelling staat klaar en zal met de eerstvolgende interne post worden verzonden.
     </p>
+    <br>
+<p>La commande ci-dessous est prête et sera expédiée avec le prochain courrier interne.</p>
 </div>
 <br>
 
@@ -35,7 +37,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
     <!-- info row -->
     <div class="row invoice-info">
         <div class="col-sm-4 invoice-col">
-            <strong>Van</strong>
+            <strong>Van / à partir de</strong>
             <address>
                 <strong>Konvert Marketing</strong><br>
                 President Kennedypark 16<br>
@@ -45,7 +47,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
             </address>
         </div><!-- /.col -->
         <div class="col-sm-4 invoice-col">
-            <strong>Voor</strong>
+            <strong>Voor / Pour</strong>
             <address>
                 <strong>{{ $recipient->name }}</strong><br>
                 {{ $recipient->address }}<br>
@@ -63,10 +65,10 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Product</th>
-                    <th>Prijs per stuk</th>
-                    <th>Hoev.</th>
-                    <th>Totaal</th>
+                    <th>Product / Produit</th>
+                    <th>Prijs / Prix</th>
+                    <th>Hoev. / Quantité</th>
+                    <th>Totaal / Total</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -81,7 +83,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
                 <tr>
                     <td></td>
                     <td></td>
-                    <td>Totaalprijs:</td>
+                    <td>Totaalprijs / Prix total:</td>
                     <td><strong>€{{ $order->price }}</strong></td>
                 </tr>
                 </tbody>

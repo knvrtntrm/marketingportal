@@ -50,7 +50,7 @@
             <tr>
               <th>ID</th>
               <th><% 'ITEM' | translate %> <% 'AMOUNT' | translate %></th>
-              <th>Aangevraagd op</th>
+              <th><% 'AANGEVRAAGD_OP' | translate %></th>
               <th><% 'PRICE' | translate %></th>
               <th>Status</th>
             </tr>
@@ -62,8 +62,8 @@
               <td><% item.created_at.slice(0,10) %></td>
 
               <td>€<% item.price %></td>
-              <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
-              <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+              <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% 'READY' | translate %></span></td>
+              <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% 'IN_BEHANDELING' | translate %></span></td>
             </tr>
             </tbody>
           </table>
@@ -91,9 +91,9 @@
             <tr>
               <th>ID</th>
               <th><% 'ITEM' | translate %> <% 'AMOUNT' | translate %></th>
-              <th>Aangevraagd op</th>
-              <th>Beurs/evenement</th>
-              <th>Status</th>
+              <th><% 'AANGEVRAAGD_OP' | translate %></th>
+              <th><% 'BEURS_EVENEMENT' | translate %></th>
+              <th><% 'STATUS' | translate %></th>
             </tr>
             </thead>
             <tbody>
@@ -103,8 +103,8 @@
               <td><% item.inventoryitems.length %> item(s)</td>
               <td><% item.created_at.slice(0,10) %></td>
               <td><% item.locatie %></td>
-              <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
-              <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+              <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% 'READY' | translate %></span></td>
+              <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% 'IN_BEHANDELING' | translate %></span></td>
             </tr>
             </tbody>
 

@@ -10,7 +10,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 <!-- Content Header (Page header) -->
 <section class="content-header">
     <h1>
-        Bestelling staat klaar
+        Bestelling staat klaar / Commande prête
         <small>KVRT{{ $order->id }}</small>
     </h1>
     
@@ -19,6 +19,8 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 
 <div class="alert alert-success">
     <p>Onderstaande bestelling staat klaar en zal met de eerstvolgende interne post worden verzonden.</p>
+    <br>
+    <p>La commande ci-dessous est prête et sera expédiée avec le prochain courrier interne.</p>
 </div>
 
 <br>
@@ -36,7 +38,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
     <!-- info row -->
     <div class="row invoice-info">
         <div class="col-sm-4 invoice-col">
-            <strong>Van</strong>
+            <strong>Van / à partir de</strong>
             <address>
                 <strong>Konvert Marketing</strong><br>
                 President Kennedypark 16<br>
@@ -46,7 +48,7 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
             </address>
         </div><!-- /.col -->
         <div class="col-sm-4 invoice-col">
-            <strong>Voor</strong>
+            <strong>Voor / Pour</strong>
             <address>
                 <strong>{{ $recipient->name }}</strong><br>
                 {{ $recipient->address }}<br>
@@ -56,11 +58,11 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
             </address>
         </div><!-- /.col -->
         <div class="col-sm-4 invoice-col">
-            <strong>Extra info</strong>
+            <strong>Extra info / Plus d'infos</strong>
             <address>
                 
-                Locatie: {{ $order->locatie }}<br>
-                Datum: {{ $order->datum }}
+                Locatie / Lieu: {{ $order->locatie }}<br>
+                Datum / Date: {{ $order->datum }}
             </address>
         </div><!-- /.col -->
 
@@ -72,8 +74,8 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
             <table class="table table-striped">
                 <thead>
                 <tr>
-                    <th>Hoev.</th>
-                    <th>Product</th>
+                    <th>Hoev. / Quantité</th>
+                    <th>Product / Produit</th>
                 </tr>
                 </thead>
                 <tbody>

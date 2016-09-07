@@ -8,13 +8,15 @@ html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:1
 <br>
 <section class="content-header">
     <h1>
-        Goedgekeurde Emailhandtekening
+        Goedgekeurde Emailhandtekening / Signature d’e-mail approuvée
     </h1>
 </section>
 <br>
 
 <div class="alert alert-success">
 	<p>Emailhandtekening voor {{ $signature_name }} is goedgekeurd! <a href="marketing.konvert.be" target='_blank'>Ga naar het marketing portaal</a> om deze te downloaden.</p>
+	<br>
+	<p>La signature d’e-mail de {{ $signature_name }} a été approuvée ! <a href="marketing.konvert.be" target='_blank'>Rendez-vous sur le portail marketing</a> pour la télécharger.</p>
 </div>
 
 </div>
