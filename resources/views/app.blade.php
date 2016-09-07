@@ -259,7 +259,7 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>v</b>0.4.2 Beta
+            <b>v</b>0.9.1 Beta
         </div>
         <strong>Copyright &copy; 2016 - Konvert NV</strong> All rights reserved.
     </footer>
