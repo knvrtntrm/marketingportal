@@ -87,6 +87,10 @@
                 </div>
 
                 <ul class="products-list product-list-in-box">
+
+                    <i class="fa fa-spinner fa-pulse fa-2x fa-fw loadingspinner"></i>
+<span class="sr-only">Loading...</span>
+
                     <li class="item" ng-repeat="item in inventoryItems| filter:search" ng-click="addItemToRequestList(item)">
                         <div class="product-img">
                             <img src="/images/test.png" alt="Product Image" style="width: 120px;

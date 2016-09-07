@@ -99,14 +99,18 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
         });
 
         var getInventoryList = function () {
+            $('.loadingspinner').show();
             $http.get('/inventory/get').success(function (response) {
                 $scope.inventoryItems = response;
+                $('.loadingspinner').hide();
             });
         };
 
         var getPromoInventoryList = function () {
+            $('.loadingspinner').show();
             $http.get('/promoinventory/get').success(function (response) {
                 $scope.promoItems = response;
+                $('.loadingspinner').hide();
             });
         };
 
