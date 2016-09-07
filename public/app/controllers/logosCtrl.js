@@ -3,8 +3,10 @@ angular.module('magazijn').controller('logosCtrl', ['$scope', '$http', function(
     $scope.logos;
 
     var getLogos = function(){
+        $('.loadingspinner').show();
         $http.get('/logos/all').success(function(data){
             $scope.logos = data;
+            $('.loadingspinner').hide();
         });
     }
 

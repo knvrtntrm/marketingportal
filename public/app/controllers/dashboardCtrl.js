@@ -11,8 +11,10 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
         $('.tabular.menu .item').tab();
 
         var getRequests = function () {
+            $('.loadingspinner-beurs').show();
             $http.get('/requests/all').success(function (data) {
                 $scope.requests = data;
+                $('.loadingspinner-beurs').hide();
             });
         }
 
@@ -29,8 +31,10 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
     });
 
         var getPromoRequests = function () {
+            $('.loadingspinner-promo').show();
             $http.get('/requests/promo/all').success(function (data) {
                 $scope.promorequests = data;
+                $('.loadingspinner-promo').hide();
             })
         }
 
