@@ -333,9 +333,9 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
         }
 
         var budgetcalcs = function () {
-            $('.budget-progress-bar').css('width', ($scope.userdata.budget / 720) * 100 + '%');
-            $('.overzicht-budget-progress-bar').css('width', (($scope.userdata.budget - $scope.totaalprijs) / 720) * 100 + '%');
-            $('.ordering-progress-bar').css('width', ($scope.totaalprijs / 720) * 500);
+            $('.budget-progress-bar').css('width', ($scope.userdata.budget / $scope.userdata.startbudget) * 100 + '%');
+            $('.overzicht-budget-progress-bar').css('width', (($scope.userdata.budget - $scope.totaalprijs) / $scope.userdata.startbudget) * 100 + '%');
+            $('.ordering-progress-bar').css('width', ($scope.totaalprijs / $scope.userdata.startbudget) * 500);
 
             if (($scope.userdata.budget - $scope.totaalprijs) < 0) {
                 ngToast.create({

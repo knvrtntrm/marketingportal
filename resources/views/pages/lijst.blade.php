@@ -14,8 +14,8 @@
             @foreach($list as $kantoor)
             <tr class="datarow">
                 <td>{{ $kantoor->name }}</td>
-                <td>720</td>
-                <td>{{ 720 - $kantoor->budget }}</td>
+                <td>{{ $kantoor->startbudget }}</td>
+                <td>{{ $kantoor->startbudget - $kantoor->budget }}</td>
                 <td>{{ $kantoor->budget }}</td>
             </tr>
             @endforeach

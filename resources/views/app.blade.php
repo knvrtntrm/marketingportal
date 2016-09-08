@@ -157,11 +157,11 @@
                     </a>
                 </li>
 
-                {{-- <li>
+                <li>
                     <a href="#/emailhandtekeningen">
-                        <i class="fa fa-paint-brush"></i> <span>Email handtekeningen</span>
+                        <i class="fa fa-paint-brush"></i> <span><% 'EMAILSIGNATURE' | translate %></span>
                     </a>
-                </li> --}}
+                </li>
 
                 <li>
                     <a href="#/logos">

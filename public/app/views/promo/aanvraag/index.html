@@ -71,11 +71,13 @@
                         </thead>
                         <tbody>
 
-                            <tr class="datarow" ng-repeat="item in currentRequestList">
+                            <tr class="datarow products-list" ng-repeat="item in currentRequestList">
                                 <td><div class="product-img">
                                     <img src="/images/promomateriaal/<% item.image %>.png" alt="Product Image" style="width:60px;">
                                 </div></td>
-                                <td><% item.name %></td>
+                                <td><% item.name %> <br> <span class="product-description">
+                                <% item.pack %> <% 'PIECES' | translate %> <% 'PER_PACKET' | translate %> - <% item.amountinstock %> <% 'PIECES' | translate %> <% 'IN_STOCK' | translate %>
+                            </span> </td>
                                 <td>€<% item.price %></td>
                                 <td><% item.amountinstock - chosenAmount %></td>
                                 <td><input type="number" min="1" max="<% item.amountinstock %>" value="1" ng-model="chosenAmount" ng-change="changeAmountToOrder(item, chosenAmount)"></td>

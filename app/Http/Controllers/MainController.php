@@ -35,7 +35,7 @@ class MainController extends Controller
         $user = $this->getUserData();
         $data = [];
 
-        $items = InventoryItem::where('firma','=',$user->firma)->where('amount',1)->get();
+        $items = InventoryItem::where('firma','=',$user->firma)->where('amount','>',0)->get();
 
         foreach($items as $item)
         {
@@ -51,7 +51,7 @@ class MainController extends Controller
 
         $user = $this->getUserData();
 
-        return PromoItem::where('firma','=',$user->firma)->where('amountinstock',">",1)->get();
+        return PromoItem::whereIn('section', [$user->section,'ALL'])->where('amountinstock',">",0)->get();
 
     }
 
