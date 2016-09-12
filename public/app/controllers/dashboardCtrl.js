@@ -59,6 +59,12 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
 
                 getNots();
                 budgetcalcs();
+
+                if($scope.userdata.section == "KIB" || $scope.userdata.section == "KIW" )
+                {
+                    $scope.changeLanguage('fr');
+                }
+
             });
         }
 

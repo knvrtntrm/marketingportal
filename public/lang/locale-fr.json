@@ -68,6 +68,17 @@
 	"PRODUCT"						: "Produit",
 	"SENT"							: "Envoyée",
 	"IN_BEHANDELING"				: "En cours de traitement",
-	"READY"							: "prête"
+	"READY"							: "prête",
+	"OVERZICHT"						: "Aperçu",
+	"GOEDGEKEURD"					: "approuvée",
+	"NAAM"							: "Nom",
+	"VOORNAAM"						: "Prénom",
+	"FUNCTIE"						: "Fonction",
+	"UITZENDCONSULENT"				: "Consultant intérim",
+	"UITZENDCONSULENTE"				: "Consultante intérim",
+	"OFFICEMANAGER"					: "Office Manager",
+	"GSMNUMMER"						: "numéro de téléphone mobile",
+	"NEWSIGNATURE"					: "Créer un nouveau signature d'e-mail",
+	"CREATESIGNATURE"				: "Créer signature d'e-mail"
 
 }

@@ -1,6 +1,7 @@
-var app = angular.module('magazijn', ["ngRoute","ngAnimate","ngToast","pascalprecht.translate"], function($interpolateProvider) {
+var app = angular.module('magazijn', ["ngRoute","ngAnimate","ngToast","pascalprecht.translate"], function($interpolateProvider, $translateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
+    $translateProvider.useSanitizeValueStrategy('escape');
 });
 
 

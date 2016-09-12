@@ -68,6 +68,17 @@
 	"PRODUCT"					: "Product",
 	"SENT"						: "Verzonden",
 	"IN_BEHANDELING"			: "In behandeling",
-	"READY"						: "Klaar"
+	"READY"						: "Klaar",
+	"OVERZICHT"					: "Overzicht",
+	"GOEDGEKEURD"				: "Goedgekeurd",
+	"NAAM"						: "Naam",
+	"VOORNAAM"					: "Voornaam",
+	"FUNCTIE"					: "Functie",
+	"UITZENDCONSULENT"			: "Uitzendconsulent",
+	"UITZENDCONSULENTE"			: "Uitzendconsulente",
+	"OFFICEMANAGER"				: "Office Manager",
+	"GSMNUMMER"					: "Gsm nummer",
+	"NEWSIGNATURE"				: "Nieuwe emailhandtekening aanmaken",
+	"CREATESIGNATURE"			: "Emailhandtekening aanmaken"
 
 }
