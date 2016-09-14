@@ -72,7 +72,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
 
         ctx.fillStyle = '#1f1e1d';
         ctx.font = ' 12pt Open Sans';
-        ctx.fillText($scope.userdata.phone, 272, 160 );
+        ctx.fillText($scope.userdata.phone, 274, 160 );
 
 
         var naam = $scope.naam;
