@@ -36,7 +36,7 @@
     <header class="main-header">
 
         <!-- Logo -->
-        <a href="/" class="logo">
+        <a href="#/" class="logo">
             <!-- mini logo for sidebar mini 50x50 pixels -->
             <span class="logo-mini"><b>K</b>M</span>
             <!-- logo for regular state and mobile devices -->
@@ -142,7 +142,7 @@
                 </div>
                 <div class="pull-left info">
                     <p>{{ Auth::user()->name }}</p>
-                    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+                    <i class="fa fa-circle text-success"></i> Online
 
                 </div>
             </div>
