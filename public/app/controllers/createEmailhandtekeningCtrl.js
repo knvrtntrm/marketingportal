@@ -82,11 +82,11 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
         if($scope.officemanager){
             ctx.fillStyle = '#1f1e1d';
             ctx.font = ' 12pt Open Sans';
-            ctx.fillText(String.fromCharCode("8226") + " GSM", 397, 160 );
+            ctx.fillText(String.fromCharCode("8226") + " GSM", 417, 160 );
 
             ctx.fillStyle = '#1f1e1d';
             ctx.font = ' 12pt Open Sans';
-            ctx.fillText($scope.gsmnummer, 447, 160 );
+            ctx.fillText($scope.gsmnummer, 467, 160 );
         }
 
         ctx.fillStyle = '#1f1e1d';
