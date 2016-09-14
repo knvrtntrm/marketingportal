@@ -370,7 +370,7 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
         var getNots = function () {
             $http.get('/notifications').success(function (data) {
                 if ($rootScope.notifications.length < data.length) {
-                    $.playSound("sounds/not");
+                    //$.playSound("sounds/not");
                 }
 
                 $rootScope.notifications = data;
