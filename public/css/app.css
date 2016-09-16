@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
-@import 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600';
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600");
 body {
   background-color: #f3f3f3; }
 
@@ -7,10 +7,8 @@ body {
   font-size: 1em; }
 
 .content-wrapper {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column; }
 
@@ -407,7 +405,6 @@ table:hover {
   color: #009fe3; }
 
 .x2 {
-  -webkit-transform: scale(2, 2);
   transform: scale(2, 2); }
 
 #signature {
