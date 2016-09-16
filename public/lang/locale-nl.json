@@ -79,6 +79,7 @@
 	"OFFICEMANAGER"				: "Office Manager",
 	"GSMNUMMER"					: "Gsm nummer",
 	"NEWSIGNATURE"				: "Nieuwe emailhandtekening aanmaken",
-	"CREATESIGNATURE"			: "Emailhandtekening aanmaken"
+	"CREATESIGNATURE"			: "Emailhandtekening aanmaken",
+	"ADMINISTRATIEFBEDIENDE"	: "Administratief bediende"
 
 }

@@ -79,6 +79,7 @@
 	"OFFICEMANAGER"					: "Office Manager",
 	"GSMNUMMER"						: "numéro de téléphone mobile",
 	"NEWSIGNATURE"					: "Créer un nouveau signature d'e-mail",
-	"CREATESIGNATURE"				: "Créer signature d'e-mail"
+	"CREATESIGNATURE"				: "Créer signature d'e-mail",
+	"ADMINISTRATIEFBEDIENDE"		: "Employée administrative"
 
 }
