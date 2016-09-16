@@ -42,7 +42,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
     var drawSignature = function(){
         
 
-        canvas.style.width=700;//actual width of canvas
+        canvas.style.width=850;//actual width of canvas
         canvas.style.height=300;//actual height of canvas
         var ctx = canvas.getContext('2d');
 
