@@ -98,22 +98,26 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
             switch($scope.userdata.section)
             {
                 case "KIV":
-                    ctx.fillText($scope.userdata.email.toLowerCase() +String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
                     break;
                 case "KO":
-                    ctx.fillText($scope.userdata.email.toLowerCase() +String.fromCharCode("8226")+ " www.konvert.be", 262, 180 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+ " www.konvert.be", 262, 180 );
                     break;
                 case "KK":
-                    ctx.fillText($scope.userdata.email.toLowerCase() +String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
                     break;
                 default:
-                    ctx.fillText($scope.userdata.email.toLowerCase() +String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
             }
         }
         else{
             switch($scope.userdata.section)
             {
                 case "KIV":
+                if($scope.userdata.food)
+                {
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"food@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
+                }
                     ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
                     break;
                 case "KO":
