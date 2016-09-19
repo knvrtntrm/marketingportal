@@ -61,7 +61,12 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
         ctx.fillText($scope.voornaam + " " + $scope.naam, 20, 20 );
         ctx.fillStyle = '#1f1e1d';
         ctx.font = '400 italic 18pt Open Sans';
-        ctx.fillText($scope.functienaam + " " + $scope.userdata.city, 20, 45 );
+        if($scope.userdata.food){
+            ctx.fillText($scope.functienaam + " " + $scope.userdata.city + " "+$scope.userdata.food, 20, 45 );
+        }else{
+            ctx.fillText($scope.functienaam + " " + $scope.userdata.city, 20, 45 );
+        }
+        
 
         ctx.fillStyle = '#1f1e1d';
         ctx.font = ' 12pt Open Sans';
