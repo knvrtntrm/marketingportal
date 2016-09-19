@@ -117,8 +117,10 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
                 if($scope.userdata.food)
                 {
                     ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"food@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 292, 180 );
-                }
+                }else{
                     ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
+                }
+                    
                     break;
                 case "KO":
                     ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvertoffice.be "+String.fromCharCode("8226")+ " www.konvert.be", 262, 180 );
