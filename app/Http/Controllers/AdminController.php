@@ -174,6 +174,16 @@ class AdminController extends Controller {
         $user->save();
         return $user;
     }
+
+    public function removePromoItem($id){
+        $item = PromoRequest::find($id);
+        $item->delete();
+    }
+
+    public function removeBeursItem($id){
+        $item = ItemsRequest::find($id);
+        $item->delete();
+    }
     
     // LIJST VO BRECHT
 

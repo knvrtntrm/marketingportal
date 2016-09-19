@@ -92,6 +92,9 @@ Route::group(['middleware' => ['web']], function () {
         Route::post('/user/update','AdminController@updateUser');
 
         Route::post('/password/manualreset','DashboardController@changePassword');
+
+        Route::get('/promoaanvragen/remove/{id}', 'AdminController@removePromoItem');
+        Route::get('/beursaanvragen/remove/{id}', 'AdminController@removeBeursItem');
         
     });
 

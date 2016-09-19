@@ -30,6 +30,20 @@ angular.module('magazijn').controller('adminCtrl',[ '$scope','$http','$location'
         });
     }
 
+    $scope.removePromoOrder = function(item){
+        $http.get('/promoaanvragen/remove/' + item.id).success(function(data){
+            $this.getPromoAanvragen();
+            $location.path('/');
+        });
+    }
+
+    $scope.removeOrder = function(item){
+        $http.get('/beursaanvragen/remove/' + item.id).success(function(data){
+            $this.getBeursAanvragen();
+            $location.path('/');
+        });
+    }
+
     // EMAILHANDTEKENINGEN
 
     $scope.signatures = [];

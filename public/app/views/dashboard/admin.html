@@ -18,10 +18,11 @@
                             <th>Aangevraagd op</th>
                             <th>Prijs</th>
                             <th>Status</th>
+                            <th>Annuleren</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="item in promorequests" ng-if="item.status == 1" ng-click="showOrderDetail(item)">
+                        <tr ng-repeat="item in promorequests" ng-if="item.status == 1">
                             <td><a ng-click="showOrderDetail(item)">KVRT<% item.id %></a></td>
                             <td><% item.client.name %></td>
                             <td><% item.promoitems.length %> item(s)</td>
@@ -29,6 +30,7 @@
                             <td>€<% item.price %></td>
                             <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
                             <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                            <td><a ng-click="removePromoOrder(item)" style="color:##C4373C;">annuleren</a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -58,16 +60,18 @@
                             <th>Aangevraag door</th>
                             <th>Aangevraagd op</th>
                             <th>Status</th>
+                            <th>annuleren</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="item in requests" ng-if="item.status == 1" ng-click="showBeursOrderDetail(item)">
+                        <tr ng-repeat="item in requests" ng-if="item.status == 1" >
                             <td><a ng-click="showBeursOrderDetail(item)">KVRT<% item.id %></a></td>
                             <td><% item.inventoryitems.length %> item(s)</td>
                             <td><% item.client.name %></td>
                             <td><% item.created_at.slice(0,10) %></td>
                             <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
                             <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                            <td><a ng-click="removeOrder(item)" style="color:##C4373C;">annuleren</a></td>
                         </tr>
                         </tbody>
 
@@ -97,6 +101,7 @@
                             <th>Voltooid op</th>
                             <th>Prijs</th>
                             <th>Status</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -109,6 +114,7 @@
                             <td>€<% item.price %></td>
                             <td ng-if="item.status == 3"><span class="label label-success"><i class="fa fa-check" style="color:white;"></i> <% item.state.name %></span></td>
                             <td ng-if="item.status == 1"><span class="label label-primary"><i class="fa fa-circle-o"></i> <% item.state.name %></span></td>
+                            
                         </tr>
                         </tbody>
                     </table>
