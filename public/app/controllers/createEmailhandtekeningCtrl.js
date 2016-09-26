@@ -121,7 +121,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
                 case "KIV":
                 if($scope.userdata.food)
                 {
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"food@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+""+$scope.userdata.food +"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
                 }else{
                     ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 262, 180 );
                 }
