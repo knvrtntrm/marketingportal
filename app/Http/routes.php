@@ -95,6 +95,9 @@ Route::group(['middleware' => ['web']], function () {
 
         Route::get('/promoaanvragen/remove/{id}', 'AdminController@removePromoItem');
         Route::get('/beursaanvragen/remove/{id}', 'AdminController@removeBeursItem');
+
+        Route::get('/order/remove/promo/{order_id}/{item_id}', 'AdminController@removePromoItemFromOrder');
+        Route::get('/order/remove/beurs/{order_id}/{item_id}', 'AdminController@removeBeursItemFromOrder');
         
     });
 

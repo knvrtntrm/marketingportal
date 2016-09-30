@@ -160,6 +160,8 @@ class DashboardController extends Controller
     public function saveSignatureImage(Request $request){
         $data = $request->image;
         $data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $data));
+        
+        //RESIZE
         file_put_contents(public_path().'/images/signatures/'.$request->filename.'.jpg',$data);
         Storage::disk('signatures')->put($request->filename.'.jpg',$data);
         return 'done';

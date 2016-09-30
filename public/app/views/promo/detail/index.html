@@ -57,14 +57,20 @@
                     <th><% 'PRICE' | translate %> <% 'PER_PIECE' | translate %></th>
                     <th><% 'AMOUNT' | translate %></th>
                     <th><% 'PRICE' | translate %></th>
+                    
+                    <th ng-if="admin"></th>
+                    
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="item in order.promoitems">
                     <td><% item.name %></td>
                     <td>€<% item.price %></td>
-                    <td><% item.pivot.amount %></td>
+                    <td><% item.pivot.amount %> x <% item.pack %> <% 'PIECES' | translate %></td>
                     <td>€<% item.price * item.pivot.amount %></td>
+                    
+                    <td ng-if="admin"><span ng-click="removePromoItemFromOrder(item)"><i class="fa fa-remove"></i></span></td>
+                   
                 </tr>
 
                 </tbody>

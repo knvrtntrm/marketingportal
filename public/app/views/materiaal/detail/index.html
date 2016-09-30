@@ -63,12 +63,14 @@
                 <tr>
                     <th><% 'AMOUNT' | translate %></th>
                     <th><% 'PRODUCT' | translate %></th>
+                    <th ng-if="admin"></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr ng-repeat="item in order.inventoryitems">
                     <td><% item.pivot.amount %></td>
                     <td><% item.name %></td>
+                    <td ng-if="admin"><span ng-click="removeBeursItemFromOrder(item)"><i class="fa fa-remove"></i></span></td>
                 </tr>
 
                 </tbody>

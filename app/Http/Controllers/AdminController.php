@@ -201,4 +201,49 @@ class AdminController extends Controller {
         return view('pages.lijst')->with('list', $allInfo);
     }
 
+    public function removePromoItemFromOrder($order_id,$item_id){
+
+        $order = PromoRequest::find($order_id);
+        $client = User::find($order->client->id);
+        $promoitem = $order->promoitems->filter(function($item) use ($item_id) {
+            return $item->id == $item_id;
+        })->first();
+
+        if($promoitem->pivot->amount > 1){
+            $order->promoitems()->updateExistingPivot($item_id, ['amount' => $promoitem->pivot->amount - 1]);
+        }else if ($promoitem->pivot->amount <= 1){
+            $order->promoitems()->detach($item_id);
+        }
+
+        $client->budget += $promoitem->price;
+        $order->price -= $promoitem->price;
+        
+        $order->save();
+        $client->save();
+
+        if($order->promoitems()->count() == 0)
+        {
+            $order->delete();
+
+            return 'remove';
+        }
+
+        return $order;
+    }
+
+    public function removeBeursItemFromOrder($order_id,$item_id)
+    {
+        $order = ItemsRequest::find($order_id);
+        
+        $order->inventoryitems()->detach($item_id);
+
+        if($order->inventoryitems()->count() == 0)
+        {
+            $order->delete();
+            return 'remove';
+        }
+
+        return $order;
+    }
+
 }
