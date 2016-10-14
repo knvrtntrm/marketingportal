@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Jobs\SendOrderReadyConfirmationEmail;
 use App\Jobs\SendPromoOrderReadyConfirmationEmail;
 use Crypt;
+use DB;
 
 class DashboardController extends Controller
 {
