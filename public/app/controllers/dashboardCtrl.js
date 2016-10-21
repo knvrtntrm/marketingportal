@@ -5,9 +5,6 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
         $scope.userdata;
         $rootScope.notifications = [];
 
-         
-
-
         $('.tabular.menu .item').tab();
 
         var getRequests = function () {
@@ -367,6 +364,35 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
 
         }
 
+        $scope.showNewOrderPage = function()
+        {
+            $location.path('/promo/aanvraag');
+            
+            // console.log($scope.promorequests);
+            // for (var i = 0; i <= $scope.promorequests.length -1; i++)
+            // {
+            //     var datestr = $scope.promorequests[i].created_at.split('-');
+
+            //     var year = datestr[0];
+            //     var month = datestr[1]; 
+            //     var day = datestr[2];
+
+            //     console.log(month);
+
+            //     var currentdate = new Date();
+            //     var cur_month = currentdate.getMonth();
+            //     var cur_day =currentdate.getDate();
+            //     var cur_year =currentdate.getFullYear();
+
+            //     if(cur_month==month && day >= cur_day)
+            //     {
+            //         notifyUserAlreadyOrderedThisMonth();
+            //     }else{
+            //         $location.path('/promo/aanvraag');
+            //     }
+            // }
+        }
+
         var getNots = function () {
             $http.get('/notifications').success(function (data) {
                 if ($rootScope.notifications.length < data.length) {
@@ -376,6 +402,10 @@ angular.module('magazijn').controller('dashboardCtrl', ['$scope', '$http', '$loc
                 $rootScope.notifications = data;
 
             })
+        }
+
+        var notifyUserAlreadyOrderedThisMonth = function(){
+            console.log("al besteld deze maand");
         }
 
         $rootScope.updateNotifications = function () {
