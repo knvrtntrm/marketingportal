@@ -106,13 +106,13 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
                     ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
                     break;
                 case "KO":
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+ " www.konvert.be", 140, 128 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+ " www.konvert.be", 140, 129 );
                     break;
                 case "KK":
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
                     break;
                 default:
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
             }
         }
         else{
@@ -121,20 +121,20 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
                 case "KIV":
                 if($scope.userdata.food)
                 {
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+""+$scope.userdata.food +"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+""+$scope.userdata.food +"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
                 }else{
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
                 }
                     
                     break;
                 case "KO":
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvertoffice.be "+String.fromCharCode("8226")+ " www.konvert.be", 140, 128 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvertoffice.be "+String.fromCharCode("8226")+ " www.konvert.be", 140, 129 );
                     break;
                 case "KK":
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konstrukt.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konstrukt.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
                     break;
                 default:
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
             }
         }
 
