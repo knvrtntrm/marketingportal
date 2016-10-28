@@ -426,7 +426,7 @@ table:hover {
   transform: scale(2, 2); }
 
 #signature {
-  font-family: eurostilebold;
+  /*font-family: eurostilebold;*/
   /*  position:absolute;
   left:100000px;*/ }
 
