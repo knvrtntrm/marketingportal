@@ -70,7 +70,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
 
         ctx.fillStyle = '#1f1e1d';
         ctx.font = ' 8pt open_sansregular';
-        ctx.fillText($scope.userdata.address + ", " +$scope.userdata.postalcode + " " +$scope.userdata.city, 140, 105 );
+        ctx.fillText($scope.userdata.address + ", " +$scope.userdata.postalcode + " " +$scope.userdata.city, 140, 104 );
 
         ctx.fillStyle = '#1f1e1d';
         ctx.font = ' 8pt open_sansregular';
@@ -103,7 +103,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
             switch($scope.userdata.section)
             {
                 case "KIV":
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 129 );
                     break;
                 case "KO":
                     ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+ " www.konvert.be", 140, 128 );
