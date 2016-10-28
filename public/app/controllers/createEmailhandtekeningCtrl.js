@@ -64,7 +64,7 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
         if($scope.userdata.food){
             ctx.fillText($scope.functienaam + " " + $scope.userdata.city + " "+$scope.userdata.food, 20, 50 );
         }else{
-            ctx.fillText($scope.functienaam + " " + $scope.userdata.city, 20, 45 );
+            ctx.fillText($scope.functienaam + " " + $scope.userdata.city, 20, 50 );
         }
         
 
