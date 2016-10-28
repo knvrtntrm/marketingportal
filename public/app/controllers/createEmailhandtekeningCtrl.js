@@ -43,42 +43,42 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
     var drawSignature = function(){
         
 
-        canvas.style.width=680;//actual width of canvas
-        canvas.style.height=240;//actual height of canvas
+        canvas.style.width=544;//actual width of canvas
+        canvas.style.height=192;//actual height of canvas
         var ctx = canvas.getContext('2d');
 
         var imageObj = new Image();
         imageObj.src = 'images/email_signature_templates/'+$scope.userdata.section+'.png';
         imageObj.onload = function() {
-            ctx.drawImage(imageObj, 0, 70, 400, 150);
+            ctx.drawImage(imageObj, 0, 70, 320, 120);
         };
 
         ctx.fillStyle = '#fff';
-        ctx.fillRect(0,0,680,240);
+        ctx.fillRect(0,0,544,192);
 
         ctx.fillStyle = '#1f1e1d';
-        ctx.font = ' 600 14pt open_sansregular';
-        ctx.fillText($scope.voornaam + " " + $scope.naam, 20, 25 );
+        ctx.font = ' 600 12pt open_sansregular';
+        ctx.fillText($scope.voornaam + " " + $scope.naam, 20, 35 );
         ctx.fillStyle = '#1f1e1d';
-        ctx.font = '400 italic 14pt open_sansregular';
+        ctx.font = '400 italic 10pt open_sansregular';
         if($scope.userdata.food){
-            ctx.fillText($scope.functienaam + " " + $scope.userdata.city + " "+$scope.userdata.food, 20, 45 );
+            ctx.fillText($scope.functienaam + " " + $scope.userdata.city + " "+$scope.userdata.food, 20, 50 );
         }else{
             ctx.fillText($scope.functienaam + " " + $scope.userdata.city, 20, 45 );
         }
         
 
         ctx.fillStyle = '#1f1e1d';
-        ctx.font = ' 10pt open_sansregular';
-        ctx.fillText($scope.userdata.address + ", " +$scope.userdata.postalcode + " " +$scope.userdata.city, 175, 112 );
+        ctx.font = ' 8pt open_sansregular';
+        ctx.fillText($scope.userdata.address + ", " +$scope.userdata.postalcode + " " +$scope.userdata.city, 140, 105 );
 
         ctx.fillStyle = '#1f1e1d';
-        ctx.font = ' 10pt open_sansregular';
-        ctx.fillText("T", 175, 127 );
+        ctx.font = ' 8pt open_sansregular';
+        ctx.fillText("T", 140, 117 );
 
         ctx.fillStyle = '#1f1e1d';
-        ctx.font = ' 10pt open_sansregular';
-        ctx.fillText($scope.userdata.phone, 185, 127 );
+        ctx.font = ' 8pt open_sansregular';
+        ctx.fillText($scope.userdata.phone, 150, 117 );
 
 
         var naam = $scope.naam;
@@ -87,32 +87,32 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
 
         if($scope.officemanager){
             ctx.fillStyle = '#1f1e1d';
-            ctx.font = ' 10pt open_sansregular';
-            ctx.fillText(String.fromCharCode("8226") + " GSM", 417, 160 );
+            ctx.font = ' 8pt open_sansregular';
+            ctx.fillText(String.fromCharCode("8226") + " GSM", 250, 117 );
 
             ctx.fillStyle = '#1f1e1d';
-            ctx.font = ' 10pt open_sansregular';
-            ctx.fillText($scope.gsmnummer, 467, 160 );
+            ctx.font = ' 8pt open_sansregular';
+            ctx.fillText($scope.gsmnummer, 285, 117 );
         }
 
         ctx.fillStyle = '#1f1e1d';
-        ctx.font = ' 10pt open_sansregular';
+        ctx.font = ' 8pt open_sansregular';
 
         if(!$scope.officemanager)
         {
             switch($scope.userdata.section)
             {
                 case "KIV":
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
                     break;
                 case "KO":
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+ " www.konvert.be", 175, 142 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+ " www.konvert.be", 140, 128 );
                     break;
                 case "KK":
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
                     break;
                 default:
-                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText($scope.userdata.email.toLowerCase() + " " +String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
             }
         }
         else{
@@ -121,20 +121,20 @@ angular.module('magazijn').controller('createEmailhandtekeningCtrl',['$scope','$
                 case "KIV":
                 if($scope.userdata.food)
                 {
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+""+$scope.userdata.food +"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+""+$scope.userdata.food +"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
                 }else{
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase()+"@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
                 }
                     
                     break;
                 case "KO":
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvertoffice.be "+String.fromCharCode("8226")+ " www.konvert.be", 175, 142 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvertoffice.be "+String.fromCharCode("8226")+ " www.konvert.be", 140, 128 );
                     break;
                 case "KK":
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konstrukt.be "+String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konstrukt.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
                     break;
                 default:
-                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 175, 142 );
+                    ctx.fillText("officemanager."+$scope.userdata.city.toLowerCase() + "@konvert.be "+String.fromCharCode("8226")+" www.konvert.be", 140, 128 );
             }
         }
 

@@ -187,11 +187,11 @@ class AdminController extends Controller {
     
     // LIJST VO BRECHT
 
-    public function getAllInfoInList() {
+    public function getAllInfoInList($section) {
 
         $allInfo = [];
 
-        $users = \App\User::where('admin', 0)->where('firma', 'Konvert')->get();
+        $users = \App\User::where('admin', 0)->where('firma', 'Konvert')->where('section',$section)->get();
 
         foreach ($users as $user) {
             $user->orders;

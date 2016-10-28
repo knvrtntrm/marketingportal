@@ -87,7 +87,7 @@ Route::group(['middleware' => ['web']], function () {
         Route::get('/drukwerk/{id}/files','AdminController@getFilesForDrukwerk');
         Route::get('/drukwerk/download/{file}','AdminController@downloadFile');
 
-        Route::get('/orders/list','AdminController@getAllInfoInList');
+        Route::get('/orders/list/{section}','AdminController@getAllInfoInList');
         Route::get('/users/all', 'AdminController@getAllUsers');
         Route::post('/user/update','AdminController@updateUser');
 
