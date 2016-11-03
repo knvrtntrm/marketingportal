@@ -96,6 +96,12 @@ class DashboardController extends Controller
 
     }
 
+    public function returnBeursItem($code){
+        $beursitem = inventoryItem::where('code',$code)->first();
+        $beursitem->amount = 1;
+        $beursitem->save();
+    }
+
     public function promoUpdate($code){
 
         $req = PromoRequest::where('id',$code)->first();

@@ -28,6 +28,7 @@ Route::get('/requests','DashboardController@getAllRequestsForApp');
 Route::get('/requests/promo','DashboardController@getAllPromoRequestsForApp');
 Route::get('/update/beurs/{code}','DashboardController@beursUpdate');
 Route::get('/update/promo/{code}','DashboardController@promoUpdate');
+Route::get('/update/beurs/return/{code}', 'DashboardController@returnBeursItem');
 Route::get('/promomateriaal/all','MainController@getAllPromoItems');
 Route::get('/beursmateriaal/all','MainController@getAllBeursItems');
 
