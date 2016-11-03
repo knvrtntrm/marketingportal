@@ -47,7 +47,7 @@ class DashboardController extends Controller
 
         $requests = [];
 
-        $reqs = ItemsRequest::where('status',1)->orderBy('created_at', 'DESC')->get();
+        $reqs = ItemsRequest::orderBy('created_at', 'DESC')->get();
 
         foreach($reqs as $req)
         {
@@ -82,7 +82,7 @@ class DashboardController extends Controller
 
         $requests = [];
 
-        $reqs = PromoRequest::where('status',1)->orderBy('created_at', 'DESC')->get();
+        $reqs = PromoRequest::orderBy('created_at', 'DESC')->get();
 
         foreach($reqs as $req)
         {
